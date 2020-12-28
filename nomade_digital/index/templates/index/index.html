@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--iconos-->
+
+    <link rel="stylesheet" href="{% static 'index/iconos/fontawesome-free-5.15.1-web/css/all.min.css' %}">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+
+    <!--styles-->
+
+    <link rel="stylesheet" href="{% static 'index/css/normalize.css' %}">
+
+    <link rel="stylesheet" href="{% static 'index/css/styles.css' %}">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- HEADER--------- -->
+    <header>
+        <div class="contenedor">
+            <div class="contenido-header">
+
+                <div class="imagen-logo">
+                    <img src="{% static 'index/img/logo-nomade.png' %}" alt="logo-imagen">
+                </div>
+
+                <div class="contenedor-nav">
+                    <div class="iconos">
+                        <a href=""><i class="fas fa-envelope"></i></a>
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="barra">
+
+                        <a href="#nav" class="mobile-menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+
+                        <nav class="contenedor-barra" id="nav">
+                            <a href="sobremi.html">Sobre mí</a>
+                            <a href="servicios.html">Servicios</a>
+                            <a href="recursos.html">Recursos</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="cursos.html">Cursos</a>
+                            <a href="contacto.html">Contacto</a>
+                            <div class="buscador">
+                                <input type="search" placeholder="Que buscas">
+                            </div>
+
+                            <a href="#" class="cerrar">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </nav>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- PRESENTACION -->
+
+    <section class="presentacion">
+        <div class="contenedor contenedor-presentacion">
+            <div class="imagen-descargable">
+                <img src="{% static 'index/img/boton.png' %}" alt="">
+            </div>
+            <p>Aprendé todo lo necesario para comenzar a triunfar en tu negocio digital ¡Dejame ayudarte a crecer!</p>
+        </div>
+    </section>
+
+    <!-- SERVICIOS---- -->
+
+    <main class="servicios">
+        <div class="contenedor">
+            <h2>Servicios</h2>
+            <div class="contenedor-servicios">
+                <div class="servicio">
+                    <h3>Community Manager</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, nemo eaque inventore repellendus consequatur ea illo voluptatem ad nulla eveniet porro, quae suscipit? Natus vel porro consequuntur veritatis aut distinctio.
+                    </p>
+                </div>
+                <div class="servicio">
+                    <h3>Identidad Visual</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae asperiores voluptatum provident cumque eius adipisci minima exercitationem soluta explicabo. Dignissimos pariatur at voluptates dolorem sequi eveniet ratione aperiam molestiae
+                        ad!
+                    </p>
+                </div>
+                <div class="servicio">
+                    <h3>Asesorias</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia asperiores quaerat nulla natus optio perspiciatis dolore sint suscipit, dolorem laborum possimus, assumenda magnam excepturi ab labore! Est corporis ipsam atque.
+                    </p>
+                </div>
+                <div class="servicio">
+                    <h3>Otros servicios
+                    </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolor nam reprehenderit aliquid iure mollitia illum non quia, corporis voluptatem voluptate nesciunt beatae laborum accusamus earum fugit quam! Nihil, incidunt!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RECURSOS-------- -->
+
+    <section class="recursos">
+        <div class="contenedor">
+            <h2>Recursos</h2>
+            <div class="contenedor contenedor-recursos">
+
+                <div class="recurso">
+                    <h3>Guia Emprendedora</h3>
+                </div>
+                <div class="recurso">
+                    <h3>E-book como usar instagram</h3>
+                </div>
+                <div class="recurso">
+                    <h3>Prepará tu calendario de contenidos</h3>
+                </div>
+                <div class="recurso">
+                    <h3>Obtené planificación mensual</h3>
+                </div>
+                <div class="recurso">
+                    <h3>E-book estrategias de neuromarketing para vender más</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carrusel">
+        <div class="carousel contenedor">
+            <button id="retroceder"><i class="fas fa-arrow-circle-left"></i></button>
+            <div id="imagen"></div>
+            <button id="avanzar"><i class="fas fa-chevron-circle-right"></i></button>
+        </div>
+
+    </section>
+
+    <section class="blog">
+        <div class="contenedor">
+            <div class="entradas-blog">
+                <img src="{% static 'index/img/community3.png' %}" alt="">
+                <img src="{% static 'index/img/community4.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="formulario">
+        <div class="contenedor-formulario contenedor">
+            <form action="" class="contenedor-formulario">
+                <input type="text" placeholder="¿Cómo te llamas?">
+                <input type="email" placeholder="¿Cuál es tu e-mail?" required>
+                <textarea> Dejame tu consulta</textarea>
+                <div class="contenedor-boton-submit">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <i>Todos los derechos reservados</i>
+    </footer>
+
+    <!--<script src="js/carrusel.js"></script>-->
+    <script src="{% static 'index/js/carrusel.js' %}"></script>
+</body>
+
+</html>
