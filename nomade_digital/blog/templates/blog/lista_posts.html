@@ -1,0 +1,12 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+    {% for post in posts %}
+
+    <p>{{ post.titulo }}</p>
+    <p>{{ post.texto|linebreaksbr|truncatechars:200 }}</p>
+    <img src='{{ post.imagen.url }}'>
+
+    {% endfor %}
+
+{% endblock %}

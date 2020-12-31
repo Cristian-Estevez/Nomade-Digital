@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--iconos-->
+
+    <link rel="stylesheet" href="{% static 'index/iconos/fontawesome-free-5.15.1-web/css/all.min.css' %}">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+
+    <!--styles-->
+
+    <link rel="stylesheet" href="{% static 'index/css/normalize.css' %}">
+
+    <link rel="stylesheet" href="{% static 'index/css/styles.css' %}">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- HEADER--------- -->
+    <header>
+        <div class="contenedor">
+            <div class="contenido-header">
+
+                <div class="imagen-logo">
+                    <a href="{% url 'index:index' %}"><img src="{% static 'index/img/logo-nomade.png' %}" alt="logo-imagen"></a>
+                </div>
+
+                <div class="contenedor-nav">
+                    <div class="iconos">
+                        <a href=""><i class="fas fa-envelope"></i></a>
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="barra">
+
+                        <a href="#nav" class="mobile-menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+
+                        <nav class="contenedor-barra" id="nav">
+                            <a href="sobremi.html">Sobre mí</a>
+                            <a href="servicios.html">Servicios</a>
+                            <a href="recursos.html">Recursos</a>
+                            <a href="{% url 'blog:lista_posts'%}">Blog</a>
+                            <a href="cursos.html">Cursos</a>
+                            <a href="contacto.html">Contacto</a>
+                            <div class="buscador">
+                                <input type="search" placeholder="Que buscas">
+                            </div>
+
+                            <a href="#" class="cerrar">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </nav>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- PRESENTACION -->
+
+    <section class="presentacion">
+        <div class="contenedor contenedor-presentacion">
+            <div class="imagen-descargable">
+                <img src="{% static 'index/img/boton.png' %}" alt="">
+            </div>
+            <p>Aprendé todo lo necesario para comenzar a triunfar en tu negocio digital ¡Dejame ayudarte a crecer!</p>
+        </div>
+    </section>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</html>
