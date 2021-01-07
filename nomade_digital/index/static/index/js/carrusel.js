@@ -1,10 +1,11 @@
 window.onload = function() {
     // Variables
     const IMAGENES = [
+        './media/blog/lentes1.jepg',
         // './img/community1.jpg',
         // './img/community2.jpg',
         // './img/community3.jpg',
-        '{% static "index/img/community1.jpg" %}',
+        //'{% static "index/img/community1.jpg" %}',
     ];
     const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
     let posicionActual = 0;

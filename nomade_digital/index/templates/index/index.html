@@ -50,7 +50,7 @@
                             <a href="sobremi.html">Sobre mí</a>
                             <a href="servicios.html">Servicios</a>
                             <a href="recursos.html">Recursos</a>
-                            <a href="blog.html">Blog</a>
+                            <a href="{% url 'blog:lista_posts'%}">Blog</a>  <!--cambié codigo aca-->
                             <a href="cursos.html">Cursos</a>
                             <a href="contacto.html">Contacto</a>
                             <div class="buscador">
@@ -151,6 +151,7 @@
     </section>
 
     <section class="blog">
+        
         <div class="contenedor">
             <div class="entradas-blog">
                 <img src="{% static 'index/img/community3.png' %}" alt="">

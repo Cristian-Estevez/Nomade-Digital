@@ -1,0 +1,22 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <p>Título: {{ form.titulo }}</p>
+            <p>Texto: {{ form.texto }}</p>
+            
+          
+            <button type="submit" value="Guardar">Guardar</button>
+
+
+        </form>
+        <!-- <img src="{{ post.imagen.url }}">             corregir que pueda cargar una imagen desde la página nomade y no solo del admin-->
+    {% endif %}
+
+
+{% endblock %}
