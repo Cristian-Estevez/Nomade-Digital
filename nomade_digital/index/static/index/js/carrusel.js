@@ -1,7 +1,7 @@
 window.onload = function() {
     // Variables
     const IMAGENES = [
-        //'.../media/blog/lentes1.jepg',
+        './media/blog/lentes1.jepg',
         // './img/community1.jpg',
         // './img/community2.jpg',
         // './img/community3.jpg',

@@ -1,0 +1,33 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
+<h2><strong>Lista de borradores: </strong></h2>
+
+<button value="Nuevo_post"><a href="{% url 'blog:nuevo_post' %}">Nuevo Post</a></button>
+<button value="Volver_blog"><a href="{% url 'blog:lista_posts' %}">Volver al Blog</a></button>
+
+<main class="contenedor-blog-interno">
+
+    {% for post in posts %}
+
+        <div class="contenido-blog">
+
+            {% if post.imagen.url is not None %}
+                <img src='{{ post.imagen.url }}'>
+            {% endif %}
+
+
+            <p>Creado: {{ post.creado|date:'d-m-y' }}</p>
+            <h3>{{ post.titulo }}</h3>
+            <p>{{ post.texto|linebreaksbr|truncatechars:100 }}</p>
+            <a href="{% url 'blog:editar_post' pk=post.pk %}">Editar</a>
+
+
+        </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}
