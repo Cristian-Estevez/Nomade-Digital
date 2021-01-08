@@ -3,21 +3,25 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-
-        <form method="POST">
+    <div class="contenedor-blog-interno">
+        <form method="POST" class="contenedor-formulario"> 
             {% csrf_token %}
+
+
+            <!-- PUEDO PONER INPUTS? -->
             
             <p>Título: {{ form.titulo }}</p>
             <p>Texto: {{ form.texto }}</p>
             
           
-            <button type="submit" value="Guardar">Guardar</button>
-
-
+            <button type="submit" value="Guardar" class="boton boton-lista-post">Guardar</button>
+            
+            <a href="{% url 'blog:lista_borrador_post' %}" class="boton boton-lista-post">Cancelar</a>
         </form>
-        <button value="Cancelar"><a href="{% url 'blog:lista_borrador_post' %}">Cancelar</a></button>
+        
         <!-- <img src="{{ post.imagen.url }}">             corregir que pueda cargar una imagen desde la página nomade y no solo del admin-->
-    {% endif %}
+    </div>
+        {% endif %}
 
 
 {% endblock %}

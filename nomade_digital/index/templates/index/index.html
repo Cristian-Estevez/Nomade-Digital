@@ -49,7 +49,7 @@
                         <nav class="contenedor-barra" id="nav">
                             <a href="sobremi.html">Sobre mí</a>
                             <a href="servicios.html">Servicios</a>
-                            <a href="recursos.html">Recursos</a>
+                            <a href="#recursos">Recursos</a>
                             <a href="{% url 'blog:lista_posts'%}">Blog</a>  <!--cambié codigo aca-->
                             <a href="cursos.html">Cursos</a>
                             <a href="contacto.html">Contacto</a>
@@ -112,12 +112,15 @@
                     </p>
                 </div>
             </div>
+            <div>
+                <a href="#formulario" class="boton">Dejame tus datos y consultá mis servicios</a>
+            </div>
         </div>
     </main>
 
     <!-- RECURSOS-------- -->
 
-    <section class="recursos">
+    <section class="recursos" id="recursos">
         <div class="contenedor">
             <h2>Recursos</h2>
             <div class="contenedor contenedor-recursos">
@@ -138,7 +141,11 @@
                     <h3>E-book estrategias de neuromarketing para vender más</h3>
                 </div>
             </div>
+            <div>
+                <a href="http://www.google.com" id="recursos" class="boton">Consultá los recursos que tengo para vos</a>
+            </div>
         </div>
+        
     </section>
 
     <section class="carrusel">
@@ -160,7 +167,7 @@
         </div>
     </section>
 
-    <section class="formulario">
+    <section class="formulario" id="formulario">
         <div class="contenedor-formulario contenedor">
             <form action="" class="contenedor-formulario">
                 <input type="text" placeholder="¿Cómo te llamas?">

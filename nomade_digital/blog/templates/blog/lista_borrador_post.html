@@ -1,11 +1,12 @@
 {% extends 'blog/layout.html' %}
 
 {% block content %}
+<div class="contenedor contenedor-lista-borrador">
+    <h2><strong>Lista de borradores </strong></h2>
 
-<h2><strong>Lista de borradores: </strong></h2>
-
-<button value="Nuevo_post"><a href="{% url 'blog:nuevo_post' %}">Nuevo Post</a></button>
-<button value="Volver_blog"><a href="{% url 'blog:lista_posts' %}">Volver al Blog</a></button>
+    <a href="{% url 'blog:nuevo_post' %}" class="boton boton-lista-post">Nuevo Post</a>
+    <a href="{% url 'blog:lista_posts' %}" class="boton boton-lista-post" >Volver al Blog</a>
+</div>
 
 <main class="contenedor-blog-interno">
 
@@ -25,7 +26,8 @@
 
 
         </div>
-    {% endfor %}
+
+        {% endfor %}
 
 
 
