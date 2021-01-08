@@ -2,35 +2,38 @@
 
 {% block content %}
 
-    <div>
+    <div class="contenedor contenedor-detalle-post">
 
     {% if post.publicado %}
 
-        <p>Publicado: {{ post.publicado }}</p>
+    
+        <i>Publicado: {{ post.publicado }}</i>
 
     {% else %}
 
-        <button type="submit"><a href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a> </button>
+        <a class="boton boton-lista-post detalle-post" href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a>
     
     {% endif %}
     
-    <button value="Volver_blog"><a href="{% url 'blog:lista_posts' %}">Volver al Blog</a></button>
+        <a class="boton boton-lista-post detalle-post" href="{% url 'blog:lista_posts' %}">Volver al Blog</a>
 
     {% if user.is_authenticated %}
 
-        <a href="{% url 'blog:editar_post' pk=post.pk %}"><button value="Editar">Editar</button></a><a href="{% url 'blog:borrar_post' pk=post.pk %}"><button value="Borrar">Borrar</button></a>
+        <a href="{% url 'blog:editar_post' pk=post.pk %}" class="boton boton-lista-post detalle-post">Editar</a>
+        <a href="{% url 'blog:borrar_post' pk=post.pk %}" class="boton boton-lista-post detalle-post">Borrar</a>
         
         
 
     {% endif %}
-
-        <h2>{{ post.titulo }}</h2>
-        <p>{{ post.texto|linebreaksbr}}</p>
+        <div class="contenedor-detalle-post-titulos">
+            <h2 class="detalle-post-titulos">{{ post.titulo }}</h2>
+            <p class="detalle-post-titulos">{{ post.texto|linebreaksbr}}</p>
+        
             
             {% if post.imagen.url is not None %}
                 <img src='{{ post.imagen.url }}'>
             {% endif %}
-        
+        </div>
         
             
     

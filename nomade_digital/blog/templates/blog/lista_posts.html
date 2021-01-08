@@ -6,11 +6,12 @@
 
 
     {% if user.is_authenticated %}
+    <div class="contenedor contenedor-lista-post">
 
-        <button value="Nuevo_post"><a href="{% url 'blog:nuevo_post' %}">Nuevo Post</a></button>
-        <button value="Lista_borrador"><a href="{% url 'blog:lista_borrador_post' %}">Borradores</a></button>
+        <a href="{% url 'blog:nuevo_post' %}" id="Nuevo_post" class="boton boton-lista-post">Nuevo Post</a>
+        <a href="{% url 'blog:lista_borrador_post' %}" id="Lista_borrador" class="boton boton-lista-post">Borradores</a>
         
-
+    </div>
     {% endif %}
 
     
