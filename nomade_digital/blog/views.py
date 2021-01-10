@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, ImagenPost
 from django.utils import timezone
 from .forms import PostForm
 from django.shortcuts import redirect
@@ -19,8 +19,11 @@ def lista_posts(request):
     return render(request, 'blog/lista_posts.html', context)
 
 def detalle_post(request, pk):
+    
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/detalle_post.html', {'post': post})
+    imagenes = ImagenPost.objects.filter(post=post)
+    print=('got images')
+    return render(request, 'blog/detalle_post.html', {'post': post, 'imagenes': imagenes})
 
 @login_required
 def editar_post(request, pk):
@@ -44,7 +47,7 @@ def editar_post(request, pk):
 @login_required
 def nuevo_post(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
 
         if form.is_valid():
             post = form.save(commit=False)
