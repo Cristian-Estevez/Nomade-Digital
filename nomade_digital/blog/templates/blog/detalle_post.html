@@ -33,6 +33,14 @@
             {% if post.imagen.url is not None %}
                 <img src='{{ post.imagen.url }}'>
             {% endif %}
+
+            {% if imagenes is not None %}
+
+                {% for imagen in imagenes %}
+                    <img src="{{ imagen.imagenes.url }}">
+                {% endfor %}
+
+            {% endif %}
         </div>
         
             

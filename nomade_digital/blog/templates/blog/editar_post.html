@@ -4,7 +4,7 @@
 
     {% if user.is_authenticated %}
     <div class="contenedor-blog-interno">
-        <form method="POST" class="contenedor-formulario"> 
+        <form method="POST" class="contenedor-formulario" enctype="multipart/form-data"> 
             {% csrf_token %}
 
 
@@ -12,6 +12,7 @@
             
             <p>Título: {{ form.titulo }}</p>
             <p>Texto: {{ form.texto }}</p>
+            <p>Imagen: {{ form.imagen }}</p>
             
           
             <button type="submit" value="Guardar" class="boton boton-lista-post">Guardar</button>
