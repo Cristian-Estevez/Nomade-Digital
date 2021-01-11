@@ -25,19 +25,20 @@
     <title>Nomade Digital Blog</title>
 </head>
 <body>
-    <!-- Este botn es el de login-->
-    {% if user.is_authenticated %}
-        <p>{{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}">Logout</a></p>
-
-    {% else %}
-
-            <button><a href="{% url 'login' %}">Login</a></button>
-
-    {% endif %}
+    
 
 
     <!-- HEADER--------- -->
     <header>
+        <!-- Este botn es el de login-->
+    {% if user.is_authenticated %}
+    <p style="font-size: 2rem; text-align: center; padding-top: 2rem; font-weight: 800;">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
+
+    {% else %}
+
+            <a href="{% url 'login' %}" class="boton" style="color: rgb(255, 102, 0); float: left; height: 100px;"></a>
+
+    {% endif %}
         <div class="contenedor">
             <div class="contenido-header">
 
