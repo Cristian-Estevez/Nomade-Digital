@@ -9,10 +9,14 @@
     
         <i>Publicado: {{ post.publicado }}</i>
 
-    {% else %}
+    {% else %}      
+        
+        {% if user.is_authenticated %}
 
         <a class="boton boton-lista-post detalle-post" href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a>
-    
+        
+        {% endif %}
+
     {% endif %}
     
         <a class="boton boton-lista-post detalle-post" href="{% url 'blog:lista_posts' %}">Volver al Blog</a>
@@ -25,6 +29,8 @@
         
 
     {% endif %}
+
+
         <div class="contenedor-detalle-post-titulos">
             <h2 class="detalle-post-titulos">{{ post.titulo }}</h2>
             <p class="detalle-post-titulos">{{ post.texto|linebreaksbr}}</p>
@@ -46,5 +52,41 @@
             
     
     </div>
+
+    <!-- agregar Comentarios                 ---------------------------------->
+    <div>
+        <h2>Comentarios en este Post: {{ comentarios.count }}</h2><br><br>
+        {% if nuevo_comentario %}
+            <div>
+            <h3>Gracias por escribirme; tu comentario será publicado lo antes posible. </h3><br><br>
+            </div>
+        {% else %}
+        <h3>Dejá tu comentario</h3>
+
+
+        <form method="POST" class="contenedor contenedor-formulario"  >
+            {% csrf_token %}
+
+            <p>Nombre: {{ form.nombre_usuario }}</p>
+            <p>E-Mail: {{ form.email }}</p>
+            <p>Comentario: {{ form.texto }}</p>
+
+            <button type="submit" value="Publicar" class="boton boton-lista-post">Publicar</button>
+
+        </form>
+
+        {% endif %}
+    </div>
+
+    <!-- Comentarios        Publicados         ---------------------------------->
+
+
+    {% for comentario in comentarios %}
+
+    <h2><u>Dijo: {{ comentario.nombre_usuario }}:</u>  &NonBreakingSpace; Fecha del comentario: {{ comentario.fecha }}</h2>
+    <p class="detalle-post-titulos">{{ comentario.texto }}</p>
+
+
+    {% endfor %}
 
 {% endblock %}

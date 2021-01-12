@@ -29,3 +29,18 @@ class ImagenPost(models.Model):
 
     def __str__(self):
         return self.post.titulo
+
+class PostComent(models.Model):
+    nombre_usuario = models.CharField('Usuario', max_length=120)
+    email = models.EmailField(max_length=254, verbose_name='Direccion de email') #Esta la queremos para nosotros, no la debemos mostrar en pantalla
+    fecha = models.DateTimeField(default=timezone.now)
+    texto = models.TextField()
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comentarios')
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-fecha']
+
+
+    def __str__(self):
+        return 'Comentario {} de {}'.format(self.texto, self.nombre_usuario)
