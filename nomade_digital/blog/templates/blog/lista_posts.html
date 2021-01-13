@@ -21,11 +21,12 @@
                
                     <div class="contenido-blog">
                         
+                        
                         {% if post.imagen.url is not None %}
                         <img src='{{ post.imagen.url }}'>
                         {% endif %}
 
-                        
+                        <h2>{{ post.titulo }}</h2>
                         <p>{{ post.texto|linebreaksbr|truncatechars:100 }}</p>
                         <a href="{% url 'blog:detalle_post' pk=post.pk %}" class="boton-blog">Ver más</a>
 
