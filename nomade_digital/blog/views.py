@@ -31,7 +31,7 @@ def detalle_post(request, pk):
 
         if form.is_valid():
             nuevo_comentario = form.save(commit=False)
-            nuevo_comentario.post_id = post
+            nuevo_comentario.post = post
             nuevo_comentario.fecha = timezone.now()
             nuevo_comentario.save()
 

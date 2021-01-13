@@ -36,7 +36,9 @@ class PostComent(models.Model):
     fecha = models.DateTimeField(default=timezone.now)
     texto = models.CharField(max_length=250)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comentarios')
-    active = models.BooleanField(default=False)
+
+    # cambiando default a True se publican directamente
+    active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['-fecha']

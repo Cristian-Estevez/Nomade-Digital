@@ -33,12 +33,15 @@
 
         <div class="contenedor-detalle-post-titulos">
             <h2 class="detalle-post-titulos">{{ post.titulo }}</h2>
-            <p class="detalle-post-titulos">{{ post.texto|linebreaksbr}}</p>
-        
-            
+
             {% if post.imagen.url is not None %}
                 <img src='{{ post.imagen.url }}'>
             {% endif %}
+
+            <p class="detalle-post-titulos">{{ post.texto|linebreaksbr}}</p>
+        
+            
+           
 
             {% if imagenes is not None %}
 
