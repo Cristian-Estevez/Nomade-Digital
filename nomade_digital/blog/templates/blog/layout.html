@@ -31,13 +31,14 @@
     <!-- HEADER--------- -->
     <header>
         <!-- Este botn es el de login-->
+        
     {% if user.is_authenticated %}
-    <p style="font-size: 2rem; text-align: center; padding-top: 2rem; font-weight: 800;">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
+    <p class="bienvenida-loguin">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
 
     {% else %}
-
-            <a href="{% url 'login' %}" class="boton" style="color: rgb(255, 102, 0); float: left; height: 100px;"></a>
-
+<div class="espacio-secreto">
+            <a href="{% url 'login' %}" class="boton boton-secreto"></a>
+        </div>
     {% endif %}
         <div class="contenedor">
             <div class="contenido-header">
@@ -55,7 +56,7 @@
                     <div class="barra">
 
                         <a href="#nav" class="mobile-menu">
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-bars"></i>
                         </a>
 
                         <nav class="contenedor-barra" id="nav">

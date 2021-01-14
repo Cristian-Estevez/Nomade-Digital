@@ -20,16 +20,20 @@
             {% for post in posts %}
                
                     <div class="contenido-blog">
-                        
-                        
-                        {% if post.imagen.url is not None %}
-                        <img src='{{ post.imagen.url }}'>
-                        {% endif %}
+                        <a href="{% url 'blog:detalle_post' pk=post.pk %}" >
+                            
+                            {% if post.imagen.url is not None %}
+                            <img src='{{ post.imagen.url }}'>
+                            {% endif %}
+                        </a>
 
-                        <h2>{{ post.titulo }}</h2>
-                        <p>{{ post.texto|linebreaksbr|truncatechars:100 }}</p>
-                        <a href="{% url 'blog:detalle_post' pk=post.pk %}" class="boton-blog">Ver más</a>
-
+                            <h2>{{ post.titulo }}</h2>
+                            <p>{{ post.texto|linebreaksbr|truncatechars:100 }}</p>
+                            <a href="{% url 'blog:detalle_post' pk=post.pk %}" class="boton boton-blog">
+                                Ver más
+                            </a>
+                            
+                        
                     </div>
             <!--<p><h2><a href='{% url "blog:detalle_post" pk=post.pk %}'>{{ post.titulo }}</a></p>
             <p>{{ post.texto|linebreaksbr|truncatechars:200 }}</p>-->

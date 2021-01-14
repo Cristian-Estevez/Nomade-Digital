@@ -4,14 +4,14 @@
 
     {% if user.is_authenticated %}
     <div class="contenedor-blog-interno">
-        <form method="POST" class="contenedor-formulario" enctype="multipart/form-data"> 
+        <form method="POST" class="contenedor-formulario formulario-editar-post" enctype="multipart/form-data"> 
             {% csrf_token %}
 
 
             <!-- PUEDO PONER INPUTS? -->
             
             <p>Título: {{ form.titulo }}</p>
-            <p>Texto: {{ form.texto }}</p>
+            <p style="max-width: 200px;">Texto: {{ form.texto }}</p>
             <p>Imagen: {{ form.imagen }}</p>
             
           

@@ -9,14 +9,14 @@
 
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-        <table class="contenedor contenedor-formulario" style="margin-top: 10rem; display: flex; align-items: center; width: 50%;">
+        <table class="contenedor contenedor-formulario table-loguin" >
         <tr>
-            <td style="font-size: 1.8rem;">{{ form.username.label_tag }}</td>
-            <td style="font-size: 1.8rem;">{{ form.username }}</td>
+            <td  class="td-loguin">{{ form.username.label_tag }}</td>
+            <td class="td-loguin">{{ form.username }}</td>
         </tr>
         <tr>
-            <td style="font-size: 1.8rem;">{{ form.password.label_tag }}</td>
-            <td style="font-size: 1.8rem;">{{ form.password }}</td>
+            <td class="td-loguin">{{ form.password.label_tag }}</td>
+            <td class="td-loguin">{{ form.password }}</td>
         </tr>
         </table>
 

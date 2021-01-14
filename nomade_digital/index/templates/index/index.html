@@ -34,24 +34,27 @@
         
             
                 <!-- Este botn es el de login-->
-    {% if user.is_authenticated %}
-    <p style="font-size: 2rem; text-align: center; padding-top: 2rem; font-weight: 800;">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
-
-{% else %}
-
-        <a href="{% url 'login' %}" class="boton" style="color: rgb(255, 102, 0); float: left; height: 100px;"></a></button>
-
-{% endif %}
-
+                {% if user.is_authenticated %}
+                <p class="bienvenida-loguin">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
+      
+                <div class="espacio-secreto">
+                          
+                {% else %}
+                
+                        <a href="{% url 'login' %}" class="boton boton-secreto espacio-secreto"></a>
+                {% endif %}
+                </div>
+                
+                
         
             <div class="contenido-header">
-
+                
                 <div class="imagen-logo">
                     <img src="{% static 'index/img/logo-nomade.png' %}" alt="logo-imagen">
                 </div>
-
                 <div class="contenedor-nav">
                     <div class="iconos">
+                        <a href=""><i class="fab fa-behance-square"></i></a>
                         <a href=""><i class="fas fa-envelope"></i></a>
                         <a href=""><i class="fab fa-facebook-square"></i></a>
                         <a href=""><i class="fab fa-instagram"></i></a>
@@ -59,7 +62,7 @@
                     <div class="barra">
 
                         <a href="#nav" class="mobile-menu">
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-bars"></i>
                         </a>
 
                         <nav class="contenedor-barra" id="nav">
@@ -69,9 +72,10 @@
                             <a href="{% url 'blog:lista_posts'%}">Blog</a>  <!--cambié codigo aca-->
                             <a href="cursos.html">Cursos</a>
                             <a href="contacto.html">Contacto</a>
-                            <div class="buscador">
-                                <input type="search" placeholder="Que buscas">
-                            </div>
+                            
+
+                            <input type="search" placeholder="Que buscas" class="buscador">
+                            
 
                             <a href="#" class="cerrar">
                                 <i class="fas fa-times"></i>

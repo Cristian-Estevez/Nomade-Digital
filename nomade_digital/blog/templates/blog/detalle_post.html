@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="contenedor contenedor-detalle-post">
-
+            <div class="contenedor-jodido">
     {% if post.publicado %}
 
     
@@ -29,9 +29,9 @@
         
 
     {% endif %}
+</div>
 
-
-        <div class="contenedor-detalle-post-titulos">
+        <div class=" contenedor-detalle-post-titulos">
             <h2 class="detalle-post-titulos">{{ post.titulo }}</h2>
 
             {% if post.imagen.url is not None %}
@@ -57,39 +57,52 @@
     </div>
 
     <!-- agregar Comentarios                 ---------------------------------->
-    <div>
-        <h2>Comentarios en este Post: {{ comentarios.count }}</h2><br><br>
+    <div class="contenedor">
+        
+
+
+        <form method="POST" class="contenedor contenedor-formulario formato-comentarios"  >
+            <a href="#comentarios" class="boton boton-lista-post">Ver {{ comentarios.count }} comentarios</a>
         {% if nuevo_comentario %}
-            <div>
-            <h3>Gracias por escribirme; tu comentario será publicado lo antes posible. </h3><br><br>
-            </div>
+            
+            <p>Gracias por escribirme; tu comentario será publicado lo antes posible. </p>
+            
         {% else %}
-        <h3>Dejá tu comentario</h3>
-
-
-        <form method="POST" class="contenedor contenedor-formulario"  >
+        <p>Dejá tu comentario</p>
             {% csrf_token %}
+            <div class="contenedor-comentarios">
+                <div class="datos-comentario">
+                    
+                    <p>Nombre: {{ form.nombre_usuario }}</p>
+                    <p>E-mail: {{ form.email }}</p>
+                </div>
 
-            <p>Nombre: {{ form.nombre_usuario }}</p>
-            <p>E-Mail: {{ form.email }}</p>
-            <p>Comentario: {{ form.texto }}</p>
+                <div class="datos-comentarios">
+                    <p>Comentarios: {{ form.texto }}</p>
+                </div>
+                
+            </div>
+           
 
             <button type="submit" value="Publicar" class="boton boton-lista-post">Publicar</button>
-
+        
         </form>
 
         {% endif %}
     </div>
 
     <!-- Comentarios        Publicados         ---------------------------------->
-
-
-    {% for comentario in comentarios %}
-
-    <h2><u>Dijo: {{ comentario.nombre_usuario }}:</u>  &NonBreakingSpace; Fecha del comentario: {{ comentario.fecha }}</h2>
-    <p class="detalle-post-titulos">{{ comentario.texto }}</p>
-
-
-    {% endfor %}
-
+    
+<div class="contenedor">
+    <div class="contenedor-comentarios-article">
+        <p><strong id="comentarios">comentarios</strong></p>
+        {% for comentario in comentarios %}
+            <article class="contenido-comentario">
+                <p>{{ comentario.texto }}</p>
+                <i >Dijo: {{ comentario.nombre_usuario }}:  &NonBreakingSpace; Fecha del comentario: {{ comentario.fecha }}</i>
+            </article>
+        
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
