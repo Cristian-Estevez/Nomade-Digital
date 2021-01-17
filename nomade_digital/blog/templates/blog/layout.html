@@ -30,62 +30,67 @@
 
     <!-- HEADER--------- -->
     <header>
-        <!-- Este botn es el de login-->
         
-    {% if user.is_authenticated %}
-    <p class="bienvenida-loguin">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
+            
+        <!-- Este botn es el de login-->
+        {% if user.is_authenticated %}
+        <p class="bienvenida-loguin">Bienvenido {{ user.username }}, estás logueada/o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'logout' %}" class="boton">Logout</a></p>
 
-    {% else %}
-<div class="espacio-secreto">
-            <a href="{% url 'login' %}" class="boton boton-secreto"></a>
+        <div class="espacio-secreto">
+                  
+        {% else %}
+        
+                <a href="{% url 'login' %}" class="boton espacio-secreto"></a>
+        {% endif %}
         </div>
-    {% endif %}
-        <div class="contenedor">
-            <div class="contenido-header">
+        
+        
 
-                <div class="imagen-logo">
-                    <a href="{% url 'index:index' %}"><img src="{% static 'index/img/logo-nomade.png' %}" alt="logo-imagen"></a>
-                </div>
-
-                <div class="contenedor-nav">
-                    <div class="iconos">
-                        <a href=""><i class="fab fa-behance-square"></i></a>
-                        <a href=""><i class="fas fa-envelope"></i></a>
-                        <a href=""><i class="fab fa-facebook-square"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="barra">
-
-                        <a href="#nav" class="mobile-menu">
-                            <i class="fas fa-bars"></i>
-                        </a>
-
-                        <nav class="contenedor-barra" id="nav">
-                            <a href="sobremi.html">Sobre mí</a>
-                            <a href="servicios.html">Servicios</a>
-                            <a href="recursos.html">Recursos</a>
-                            <a href="{% url 'blog:lista_posts'%}">Blog</a>
-                            <a href="cursos.html">Cursos</a>
-                            <a href="contacto.html">Contacto</a>
-                            <div class="buscador">
-                                <input type="search" placeholder="Que buscas">
-                            </div>
-
-                            <a href="#" class="cerrar">
-                                <i class="fas fa-times"></i>
-                            </a>
-                        </nav>
-
-
-
-                    </div>
-                </div>
+    <div class="contenido-header">
+        
+        <div class="imagen-logo">
+            <img src="{% static 'index/img/logo-nomade.png' %}" alt="logo-imagen">
+        </div>
+        <div class="contenedor-nav">
+            <div class="iconos">
+                <a href=""><i class="fab fa-behance-square"></i></a>
+                <a href=""><i class="fas fa-envelope"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
             </div>
+            <div class="barra">
 
+                <a href="#nav" class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </a>
+
+                <nav class="contenedor-barra" id="nav">
+                    <ul>
+                        <li><a href="sobremi.html">Sobre mí</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="{% url 'recursos:recursos'%}">Recursos</a></li>
+                        <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  <!--cambié codigo aca-->
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+
+                    <input type="search" placeholder="  ¿Que buscás?" class="buscador">
+                    
+
+                    <a href="#" class="cerrar">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </nav>
+
+
+
+            </div>
         </div>
+    </div>
 
-    </header>
+</div>
 
+</header>
     
 
     
@@ -99,5 +104,6 @@
         <i>Todos los derechos reservados</i>
     </footer>
 
+</body>
 
 </html>
