@@ -1,7 +1,8 @@
 {% extends 'blog/layout.html' %}
 
 {% block content %}
-
+<body>
+    
     {% if user.is_authenticated %}
     <div class="contenedor-blog-interno">
         <form method="POST" class="contenedor-formulario formulario-editar-post" enctype="multipart/form-data"> 
@@ -11,7 +12,7 @@
             <!-- PUEDO PONER INPUTS? -->
             
             <p>Título: {{ form.titulo }}</p>
-            <p style="max-width: 200px;">Texto: {{ form.texto }}</p>
+            <p>Texto: {{ form.texto }}</p>
             <p>Imagen: {{ form.imagen }}</p>
             
           
@@ -23,5 +24,6 @@
     </div>
         {% endif %}
 
+</body>
 
 {% endblock %}
