@@ -22,7 +22,7 @@
         }
         
         .boton{
-            display: inline-block;
+            display: block;
             text-decoration: none;
             padding: 1rem 1.5rem;
             margin-top: 1.5rem;
@@ -40,6 +40,13 @@
             background-color: rgb(255, 72, 0);
             cursor: pointer;
         }
+
+        @media (min-width:996px){
+            .boton{
+                display: inline;
+            }
+        }
+
 
         h2 {
             margin: 0;
@@ -409,7 +416,8 @@
                 width: 10rem;
             }
         }
-        /* BLOG--------- */
+
+/* BLOG--------- */
         
         .blog {
             background-color: rgb(216, 215, 215);
@@ -419,7 +427,9 @@
         .entradas-blog {
             overflow-y: scroll;
         }
-        /* FORMULARIO-------- */
+
+
+/* FORMULARIO-------- */
         
         .formulario {
             padding-top: 3rem;
@@ -454,7 +464,9 @@
         }
 
         
-        /* FOOTER ---------*/
+
+
+/* FOOTER ---------*/
     
 
         footer {
@@ -462,11 +474,14 @@
             background-color: rgb(216, 215, 215);
             text-align: center;
             font-size: 1.8rem;
+            color: black;
         }
 
 
-        /* PAGINAS INTERNAS----------
-        ------ADMINISTRACION BLOG------- */
+
+
+/* PAGINAS INTERNAS----------
+------ADMINISTRACION BLOG------- */
         .contenedor-lista-post{
             display: flex;
             justify-content: center;
@@ -479,21 +494,21 @@
 
        
 
-        /* PAGINAS INTERNAS----------
-        ------BLOG------- */
+/* PAGINAS INTERNAS----------
+------BLOG------- */
 
         .contenedor-blog-interno {
-            width: 80%;
-            max-width: 160rem;
-            margin: 0 auto;
+            width: 90%;
+            margin: 4rem auto;
             
         }
         
         .contenido-blog{
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             transition: .5s;
-            border: 1px solid  rgb(238, 72, 16);
-            background-color: rgb(235, 128, 93);
+            border: 5px solid  rgb(238, 72, 16);
+            border-radius: 10px;
+            background-color: white;
             padding: 2px 3px;
         }
         
@@ -504,52 +519,63 @@
         }
         
         .contenido-blog p{
-            padding: 1rem 1rem;
+            padding: 1rem;
+            color: rgb(102, 102, 102);
         }
         
         .contenido-blog h2{
             text-transform: uppercase;
             padding: 2rem;
+            
+        }
+
+        .contenido-blog a{
+            text-align: center;
+            text-transform: uppercase;
         }
         
-        @media (min-width:768px){
+        .contenido-blog hr{
+            height: 2px;
+            color: orangered;
+            background-color: orangered;
+            width: 50%;
+        }
+
+        .contenido-blog a img{
+            display: block;
+            margin: 2rem auto;
+            max-width: 70%;
+            
+        }
+        @media (min-width:996px){
             .contenedor-blog-interno{
                 display: flex;
                 justify-content: space-evenly;
                 flex-wrap: wrap;
+                max-width: 1200px;
                 margin-top: 3rem;
             }
             
             .contenido-blog{
-                
-                flex: 0 0 calc(30% - 3rem);
-                
-                margin-bottom: 3rem;
-                transition: .5s;
+                flex: 0 1 calc(30% - 3rem);                 
+            }
+
+            .contenido-blog a img{
+                max-width: 100%;
+                margin-top: 0;
             }
         }
-        
-        /* .contenido-blog a{
-            text-transform: uppercase;
-            text-decoration: none;
-            color: white;
-            
-            background-color: orange;
-            text-align: center;
-            display: inline;
-            padding: 8px 15px;
-        } */
 
 
-        /* PAGINAS INTERNAS----------
-        ------loguin------- */
+/* PAGINAS INTERNAS----------
+------loguin------- */
         .espacio-secreto{
            width: 20px;
            height: 100px;
            position: absolute;
         }
 
-        /* LOGUIN */
+/* LOGUIN */
         .td-loguin{
             font-size: 1.8rem;
         }
@@ -559,9 +585,10 @@
         .table-loguin{
             margin-top: 10rem;
             display: flex;
-            
+            line-height: 2rem;
             width: 50%;
         }
+
 
         @media (max-width: 768px){
             .table-loguin{
@@ -573,16 +600,16 @@
         .bienvenida-loguin{
             text-align: center;
             margin: 0;
-            padding: 0;
+            padding-top: 1.8rem;
             background-color: rgb(238, 72, 16);
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
         }
 
         
-        /* PAGINAS INTERNAS----------
-        ------ADMINISTRACION BLOG
-        EDITAR POST------- */
+/* PAGINAS INTERNAS----------
+------ADMINISTRACION BLOG
+EDITAR POST------- */
 
         .contenedor-blog-interno form{
             margin-top: 2rem;
@@ -592,7 +619,7 @@
         }
 
         .contenedor-blog-interno p{
-            color: white;
+            
             font-size: 1.6rem;
             margin-top: 2rem;
         }
@@ -605,9 +632,9 @@
             background-color: black;
         }
 
-        /* PAGINAS INTERNAS----------
-        ------ADMINISTRACION BLOG
-        DETALLE POST------- */
+/* PAGINAS INTERNAS----------
+------ADMINISTRACION BLOG
+DETALLE POST------- */
 
         .contenedor-detalle-post{
             display: flex;
@@ -747,9 +774,9 @@
 
 
 
-        /* PAGINAS INTERNAS----------
-        ------ADMINISTRACION BLOG
-        LISTA BORRADORES POST------- */
+/* PAGINAS INTERNAS----------
+------ADMINISTRACION BLOG
+LISTA BORRADORES POST------- */
         .contenedor-lista-borrador{
             text-align: center;
             margin: 3rem 0;
@@ -759,6 +786,22 @@
             font-size: 3rem;
         }
 
-        
 
+/* PAGINAS INTERNAS----------
+------RECURSOS------- */
+        
+    .contenedor-recursos-interna{
+        text-align: center;
+        max-width: 60%;
+        margin-top: 3rem;
+    }
+
+    .contenedor-recursos-interna h2{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .contenedor-recursos-interna p {
+        font-size: 1.8rem;
+    }
         
