@@ -1,18 +1,32 @@
-{% load static %}
+{% extends 'blog/layout.html' %}
+<!--{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- estilos css     -->
+     estilos css     
     <link rel="stylesheet" href="{% static 'index/css/normalize.css' %}">
 
     <link rel="stylesheet" href="{% static 'index/css/styles.css' %}">
 
     <title>Document</title>
 </head>
+-->
+
+
+{% block content %}
 <body>
+    {% if user.is_authenticated %}
+    <div class="contenedor contenedor-lista-post">
+
+        <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
+        <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-lista-post">Lista Borrador Recursos</a>
+        
+    </div>
+    {% endif %}
+
     <div class="contenedor contenedor-recursos-interna">
         <h2>Recursos Marketing Digital y Blog</h2>
 
@@ -23,25 +37,31 @@
     <!-- ES EL MISMO CODIGO QUE EL DEL BLOG -->
 
     <div class="contenedor-blog-interno">
-        <div class="contenido-blog">
-            
+        
+
+            {% for recurso in recursos %}
+                
+                    <div class="contenido-blog">
+                    
                         <a href="#" >
 
-                            <img src=''>
+                            <img src='{{ recurso.imagen.url }}'>
                             
                         </a>
 
-                            <h2>Aca va el titulo del recurso</h2>
-                            <p>Descripcion del recurso</p>
-                            <a href="#" class="boton boton-blog">
+                            <h2>{{ recurso.titulo }}</h2>
+                            <p>{{ recurso.texto|truncatewords:15|safe }}</p>
+                            <a href="{% url 'recursos:detalle_recursos' pk=recurso.pk %}" class="boton boton-blog">
                                 Ver más
                             </a>
                             
                         
                     </div>
-
+            
+            {% endfor %}
 
     
     </div>
 </body>
-</html>
+{% endblock %}
+<!-- </html>-->

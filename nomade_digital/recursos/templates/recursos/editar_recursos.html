@@ -1,27 +1,30 @@
+{% extends 'blog/layout.html' %}
 
-
+{% block content %}
 <body>
     
-   
+    {% if user.is_authenticated %}
     <div class="contenedor-blog-interno">
         <form method="POST" class="contenedor-formulario formulario-editar-post" enctype="multipart/form-data"> 
-           
+            {% csrf_token %}
 
 
             <!-- PUEDO PONER INPUTS? -->
             
-            <p>Título:</p>
-            <p>Texto:</p>
-            <p>Imagen:</p>
+            <p>Título: {{ form.titulo }}</p>
+            <p>{{ form.media }}</p>
+            <p>Texto: {{ form.texto }}</p>
+            <p>Imagen: {{ form.imagen }}</p>
             
           
             <button type="submit" value="Guardar" class="boton boton-lista-post">Guardar</button>
             
-            <a href="" class="boton boton-lista-post">Cancelar</a>
+            <a href="{% url 'recursos:lista_borrador_recursos' %}" class="boton boton-lista-post">Cancelar</a>
         </form>
         
     </div>
-       
+    {% endif %}
 
 </body>
 
+{% endblock %}

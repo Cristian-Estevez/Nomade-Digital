@@ -1,3 +1,6 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
 <body>
     
 
@@ -7,24 +10,21 @@
 
     <div class=" contenedor-detalle-post-titulos">
 
-        <h2 class="detalle-post-titulos">titulo del post</h2>
+        <h2 class="detalle-post-titulos">{{ recurso.titulo }}</h2>
 
         
-            <img src=''>
+            <img src='{{ recurso.imagen.url }}'>
         
 
         <p class="detalle-post-titulos">
-            aca va el texto del post
+            {{ recurso.texto|safe }}
         </p>
-    
-        
-       
 
-       
-        
     </div>
 
 </div>
 
 
 </body>
+
+{% endblock %}

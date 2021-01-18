@@ -1,33 +1,38 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
 <div class="contenedor contenedor-lista-borrador">
     <h2><strong>Lista de borradores Recursos </strong></h2>
 
     <a href="" class="boton boton-lista-post">Nuevo Recurso</a>
-    <a href="" class="boton boton-lista-post" >Volver a Recursos</a>
+    <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
 </div>
 
 <main class="contenedor-blog-interno">
 
     
-
+    {% for recurso in recursos %}
         <div class="contenido-blog">
 
-            
-                <img src=''>
+            {% if recurso.imagen %}
+                <img src='{{ recurso.imagen.url }}'>
             {% endif %}
-
-
-            <p>Creado:</p>
-
-            <h2>titulo</h2>
-
-            <p> maximo de letras que aparecen en contenedor</p>
             
-            <a href="">Editar</a>
+            
+            <p>{{ recurso.creado }}</p>
+
+            <h2>{{ recurso.titulo }}</h2>
+
+            <p>{{ recurso.texto|truncatewords:15|safe }}</p>
+            
+            <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}">Editar</a>
 
 
         </div>
-
+    
+    {% endfor %}
 </main>
 
 
-
+{% endblock %}
