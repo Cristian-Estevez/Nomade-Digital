@@ -38,7 +38,7 @@
                 <img src='{{ post.imagen.url }}'>
             {% endif %}
 
-            <p class="detalle-post-titulos">{{ post.texto|linebreaksbr}}</p>
+            <p class="detalle-post-titulos">{{ post.texto|safe }}</p>
         
             
            

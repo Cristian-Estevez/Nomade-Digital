@@ -21,7 +21,7 @@
 
             <p>Creado: {{ post.creado|date:'d-m-y' }}</p>
             <h2>{{ post.titulo }}</h2>
-            <p>{{ post.texto|linebreaksbr|truncatechars:100 }}</p>
+            <p>{{ post.texto|truncatewords:4|safe }}</p>
             <a href="{% url 'blog:editar_post' pk=post.pk %}">Editar</a>
 
 
