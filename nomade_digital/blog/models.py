@@ -9,7 +9,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=200)
     texto = RichTextField(blank=True, null=True)
     #texto = models.TextField()
-    imagen = models.ImageField(upload_to='blog', null=True, blank=True) 
+    imagen = models.ImageField(upload_to='blog', null=True, blank=True, verbose_name='Imagen de portada') 
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     creado = models.DateTimeField(default=timezone.now)
     publicado = models.DateTimeField(blank=True, null=True)
