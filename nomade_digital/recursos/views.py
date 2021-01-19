@@ -40,7 +40,7 @@ def editar_recurso(request, pk):
     else:
         form = RecursoForm(instance=recurso)
     
-    return render(request, 'recursos/editar_recursos.html', {'form': form})
+    return render(request, 'recursos/editar_recursos.html', {'form': form, 'recurso':recurso})
 
 
 @login_required
@@ -53,5 +53,33 @@ def lista_borrador_recursos(request):
 @login_required
 def nuevo_recurso(request):
     """Vista para crear un nuevo recurso"""
-    pass
+    
+    if request.method =='POST':
+        form = RecursoForm(request.POST, request.FILES)
 
+        if form.is_valid():
+            recurso = form.save(commit=False)
+            recurso.autor = request.user
+            recurso.save()
+
+            return redirect('recursos:detalle_recursos', pk=recurso.pk)
+
+    else:
+        form = RecursoForm
+        return render(request, 'recursos/editar_recursos.html', {'form': form})
+
+
+@login_required
+def publicar_recurso(request, pk):
+    recurso = get_object_or_404(Recurso, pk=pk)
+    recurso.publicar()
+    return redirect('recursos:detalle_recursos', pk=pk)
+
+    
+
+
+@login_required
+def borrar_recurso(request, pk):
+    recurso = get_object_or_404(Recurso, pk=pk)
+    recurso.delete()
+    return redirect('recursos:recursos')

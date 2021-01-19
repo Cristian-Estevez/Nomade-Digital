@@ -5,7 +5,7 @@
 <div class="contenedor contenedor-lista-borrador">
     <h2><strong>Lista de borradores Recursos </strong></h2>
 
-    <a href="" class="boton boton-lista-post">Nuevo Recurso</a>
+    <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
     <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
 </div>
 
@@ -15,7 +15,7 @@
     {% for recurso in recursos %}
         <div class="contenido-blog">
 
-            {% if recurso.imagen %}
+            {% if recurso.imagen.url is not None %}
                 <img src='{{ recurso.imagen.url }}'>
             {% endif %}
             
@@ -26,7 +26,7 @@
 
             <p>{{ recurso.texto|truncatewords:15|safe }}</p>
             
-            <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}">Editar</a>
+            <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}" class="boton boton-blog">Editar</a>
 
 
         </div>
