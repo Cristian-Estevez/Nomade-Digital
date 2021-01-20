@@ -37,6 +37,18 @@
     {% endif %}
 </div>
 
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2>Solicita el envío de este recurso por mail</h2>
+        <p>{{ form.nombre }}</p>
+        <p>{{ form.email }}</p>
+
+        <input type="submit" value="Solicitar">
+
+    </form>
+
+</div>
 
 </body>
 

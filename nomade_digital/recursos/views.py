@@ -3,7 +3,7 @@ from .models import Recurso
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.http import HttpResponse
-from .forms import RecursoForm
+from .forms import RecursoForm, EnvioRecursoForm
 
 
 # Create your views here.
@@ -19,7 +19,21 @@ def recursos(request):
 
 def detalle_recursos(request, pk):
     recurso = get_object_or_404(Recurso, pk=pk)
-    return render(request, 'recursos/detalle_recursos.html', {'recurso': recurso})
+    
+    if request.method == 'POST':
+        form = EnvioRecursoForm(request.POST)
+        if form.is_valid:
+            recurso_enviado = form.save(commit=False)
+            recurso_enviado.enviados = request.pk
+            recurso_enviado.save()
+        
+    else:
+        form = EnvioRecursoForm()
+
+
+
+
+    return render(request, 'recursos/detalle_recursos.html', {'recurso': recurso, 'form':form})
 
 
 @login_required
