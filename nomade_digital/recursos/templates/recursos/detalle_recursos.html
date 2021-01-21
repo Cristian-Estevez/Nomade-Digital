@@ -32,7 +32,6 @@
             <p>{{ form.nombre }}</p>
             <p>{{ form.email }}</p>
 
-<<<<<<< HEAD
 {% if recurso.archivo %}
 <div>
     <form action="" method="POST">
@@ -40,20 +39,16 @@
         <h2>Solicita el envío de este recurso por mail</h2>
         <p>{{ form.nombre }}</p>
         <p>{{ form.email }}</p>
-=======
             <input type="submit" value="Solicitar" class="boton boton-lista-post">
             <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
->>>>>>> d09cb946d85f80378f8b38cd958d48315d219e1b
 
         </form>
     </div>
 
     <div class="contenedor contenedor-lista-recursos contenedor-jodido-2">
 
-<<<<<<< HEAD
 </div>
 {% endif %}
-=======
         {% if user.is_authenticated %}
             <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
             <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-lista-post">Lista Borrador Recursos</a>
@@ -64,7 +59,6 @@
     </div>
     
 
->>>>>>> d09cb946d85f80378f8b38cd958d48315d219e1b
 </body>
 
 {% endblock %}
