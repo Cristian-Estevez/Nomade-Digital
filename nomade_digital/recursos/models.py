@@ -1,4 +1,4 @@
-from os import EX_TEMPFAIL
+# from os import EX_TEMPFAIL
 from django.db import models
 from django.db.models.deletion import CASCADE
 from ckeditor.fields import RichTextField

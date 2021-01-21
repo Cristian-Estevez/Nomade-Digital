@@ -68,7 +68,7 @@
             <p>Gracias por escribirme; tu comentario será publicado lo antes posible. </p>
             
         {% else %}
-        <p>Dejá tu comentario</p>
+        <h3>Dejá tu comentario</h3>
             {% csrf_token %}
             <div class="contenedor-comentarios">
                 <div class="datos-comentario">
@@ -77,7 +77,7 @@
                     <p>E-mail: {{ form.email }}</p>
                 </div>
 
-                <div class="datos-comentarios">
+                <div class="datos-comentario">
                     <p>Comentarios: {{ form.texto }}</p>
                 </div>
                 
