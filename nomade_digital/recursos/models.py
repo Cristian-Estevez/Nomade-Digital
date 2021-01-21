@@ -1,4 +1,4 @@
-from os import EX_TEMPFAIL
+# from os import EX_TEMPFAIL
 from django.db import models
 from django.db.models.deletion import CASCADE
 from ckeditor.fields import RichTextField
@@ -13,6 +13,7 @@ class Recurso(models.Model):
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
     creado = models.DateTimeField(default=timezone.now)
     publicado = models.DateTimeField(null=True, blank=True)
+    archivo = models.FileField(upload_to='archivos_recursos' ,blank=True, null=True)
 
     class Meta:
         verbose_name = 'recurso'

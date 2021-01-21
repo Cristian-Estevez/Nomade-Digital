@@ -37,6 +37,7 @@
     {% endif %}
 </div>
 
+{% if recurso.archivo %}
 <div>
     <form action="" method="POST">
         {% csrf_token %}
@@ -49,7 +50,7 @@
     </form>
 
 </div>
-
+{% endif %}
 </body>
 
 {% endblock %}

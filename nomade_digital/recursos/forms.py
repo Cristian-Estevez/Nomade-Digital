@@ -5,7 +5,7 @@ from .models import Recurso, EnvioRecurso
 class RecursoForm(forms.ModelForm):
     class Meta:
         model = Recurso
-        fields = ['titulo', 'texto', 'imagen']
+        fields = ['titulo', 'texto', 'imagen', 'archivo']
 
 
 class EnvioRecursoForm(forms.ModelForm):
@@ -14,4 +14,4 @@ class EnvioRecursoForm(forms.ModelForm):
     
     class Meta:
         model = EnvioRecurso
-        fields = ['nombre', 'email']
+        fields = ['nombre', 'email', 'recurso_enviado']
