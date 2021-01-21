@@ -55,9 +55,12 @@
         }
         
         h3 {
-            margin: 0;
+            margin: 2rem auto;
             text-transform: uppercase;
             font-size: 2rem;
+            text-align: center;
+            line-height: 2.8rem;
+
         }
         
         p {
@@ -128,6 +131,9 @@
                 font-size: 2rem;
                 margin-right: 2rem;
             }
+            .iconos a:last-of-type{
+                margin-right: 0;
+            }
             .contenedor-barra {
                 display: flex;
                 flex-direction: row;
@@ -166,6 +172,7 @@
             }
         
             .contenedor-barra input{
+                width: 20%;
                 height: 3rem;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -356,6 +363,7 @@
         .contenedor-recursos {
             padding-top: 3rem;
             max-width: 120rem;
+            margin-bottom: 3rem;
         }
         
         .recurso {
@@ -444,16 +452,34 @@
             width: 90%;
             margin: 0 auto;
         }
+
+        .contenedor-formulario a {
+            order: 1;
+        }
+        .contenedor-formulario button{
+            order: 1;
+        }
+        .contenedor-formulario a, button{
+            align-self: flex-end;
+        }
+
+        
+
+        .contenedor-formulario legend{
+            font-size: 2rem;
+            margin: 3rem auto;
+            
+        }
         
         .contenedor-formulario > input {
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             border-radius: .5rem;
             padding: .8rem 0;
         }
         
         .contenedor-formulario textarea {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             border-radius: .5rem;
             height: 8rem!important;
         }
@@ -707,7 +733,7 @@ DETALLE POST------- */
         }
 
         .formato-comentarios{
-            margin-top: 10rem;
+            margin-top: 8rem;
             font-size: 1.8rem;
             color: black;
         }
@@ -804,4 +830,32 @@ LISTA BORRADORES POST------- */
     .contenedor-recursos-interna p {
         font-size: 1.8rem;
     }
+
+    /* PAGINAS INTERNAS----------
+------RECURSOS SOLICITAR RECURSO------- */
+    .contenedor-lista-recursos{
+        text-align: center;
+    }
+
+    .contenedor-lista-recursos h3{
+        margin: 3rem 0;
+    }
+
+    .formato-comentarios input {
+        display: block;
+        margin: 0 auto;
+    }
         
+    .contenedor-jodido-2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contenedor-jodido-2 a{
+        flex: 0 1 40%;
+        margin-right: 2rem;
+    }
+
+   .mensaje-aparece{
+       display: none;
+   }
