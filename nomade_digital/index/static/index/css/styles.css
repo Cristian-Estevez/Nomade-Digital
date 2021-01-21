@@ -161,16 +161,11 @@
                 display: inline!important;
                 margin-left: 3rem;
                 margin-top: .4rem;
-                width: 100%;
-
-            }
-        
-            .contenedor-barra input{
+                width: 20%;
                 height: 3rem;
                 border: 1px solid white;
                 border-radius: 5px;
             }
-        
         
        
     
@@ -525,7 +520,7 @@
         
         .contenido-blog h2{
             text-transform: uppercase;
-            padding: 2rem;
+            padding: 2rem 2rem 2rem 1rem;
             
         }
 
@@ -621,7 +616,7 @@ EDITAR POST------- */
         .contenedor-blog-interno p{
             
             font-size: 1.6rem;
-            margin-top: 2rem;
+            margin-bottom: 3rem;
         }
 
         .boton-lista-post{
@@ -670,14 +665,16 @@ DETALLE POST------- */
             font-weight: 900;
         }
 
-        .contenedor-detalle-post-titulos h2, p{
-            margin-bottom: 3rem;
+        .contenedor-detalle-post-titulos h2{
+            margin-bottom: 5rem;
+            padding-top: 4rem;
             text-transform: capitalize;
         }
 
         .contenedor-detalle-post-titulos p {
             text-align: left;
             padding-top: 5rem;
+            
         }
 
         .contenedor-detalle-post-titulos img{
@@ -792,16 +789,26 @@ LISTA BORRADORES POST------- */
         
     .contenedor-recursos-interna{
         text-align: center;
-        max-width: 60%;
-        margin-top: 3rem;
+        max-width: 50%;
+        margin: 4rem auto;
+        line-height: 4rem;
     }
 
     .contenedor-recursos-interna h2{
-        font-size: 3rem;
+        font-size: 4rem;
         margin-bottom: 2rem;
+        line-height: 6rem;
     }
 
     .contenedor-recursos-interna p {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+    }
+
+    .contenido-blog i{
+        display: block;
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
     }
         
