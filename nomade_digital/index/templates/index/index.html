@@ -212,10 +212,13 @@
     {% if mensaje != None %}
     <!-- ESTE TEXTO SE RENDERIZA DESPUES DE HABER ENVIADO LA CONSULTA. FALTA DARLE FORMATO -->
     <div>
-        <h1>{{ mensaje }} </h1>
-        <p>Responderé a la brevedad.</p>
+
+        <!-- poner capitalize en css -->
+        
+        <h1 class="mensaje-aparece">{{ mensaje }} </h1>
+        <!-- <p>Responderé a la brevedad.</p>
         <p>No olvides revisar tu casilla de Spam.</p>
-        <br><br>
+        <br><br>  -->
 
 
     </div>
@@ -224,13 +227,21 @@
     {% else %}
     <section class="formulario" id="formulario">
         <div class="contenedor">
-            <form action="" class="contenedor-formulario" method="POST">
+
+            
+            <form action="" class="contenedor-formulario formato-comentarios" method="POST">
+                <legend>Contactá conmigo</legend>
                 {% csrf_token %}
+                <div class="contenedor-comentarios">
+                    <div class="datos-comentario">
+                        <p>{{ form.nombre }}</p> 
+                        <p>{{ form.email }}</p>
+                    </div>
 
-                <p>{{ form.nombre }}</p> 
-                <p>{{ form.email }}</p>
-                <p>{{ form.mensaje }}</p>
-
+                <div class="datos-comentario">
+                    <p>{{ form.mensaje }}</p>
+                </div>
+            </div>
 
                 <!-- <input type="text" placeholder="¿Cómo te llamas?">
                 <input type="email" placeholder="¿Cuál es tu e-mail?" required>
@@ -250,6 +261,17 @@
 
     <!--<script src="js/carrusel.js"></script>-->
     <!--<script src="{% static 'index/js/carrusel.js' %}"></script>-->
+    <script>
+        const mensajeAparece = document.querySelector('mensaje-aparece');
+        alert('{{ mensaje }}, respondere a la brevedad')
+
+        mensajeAparece.addEventListener('click', () => {
+            mensajeAparece.remove('mensaje-aparece');
+        })
+
+        
+
+    </script>
 </body>
 
 </html>

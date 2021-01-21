@@ -5,8 +5,7 @@
     
 
 <div class="contenedor contenedor-detalle-post">
-    <div class="contenedor-jodido">
-    </div>
+    
 
     <div class=" contenedor-detalle-post-titulos">
 
@@ -23,32 +22,33 @@
     </div>
 
 </div>
-<div class="contenedor contenedor-lista-post">
+   
+    <div class="contenedor-lista-recursos">
+        <h3>Solicita el envío de este recurso por mail</h3>
 
-    <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
+        <form action="" method="POST" class="formato-comentarios">
+            {% csrf_token %}
+            
+            <p>{{ form.nombre }}</p>
+            <p>{{ form.email }}</p>
+
+            <input type="submit" value="Solicitar" class="boton boton-lista-post">
+            <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
+
+        </form>
+    </div>
+
+    <div class="contenedor contenedor-lista-recursos contenedor-jodido-2">
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
+            <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-lista-post">Lista Borrador Recursos</a>
+            <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Editar</a>
+            <a class="boton boton-lista-post" href="{% url 'recursos:publicar_recurso' pk=recurso.pk %}">Publicar</a>
+            <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Eliminar definitivamente</a> 
+        {% endif %}
+    </div>
     
-
-    {% if user.is_authenticated %}
-        <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
-        <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-lista-post">Lista Borrador Recursos</a>
-        <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}" class="boton boton-blog">Editar</a>
-        <a class="boton boton-lista-post detalle-post" href="{% url 'recursos:publicar_recurso' pk=recurso.pk %}">Publicar</a>
-        <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-blog">Eliminar definitivamente</a> 
-    {% endif %}
-</div>
-
-<div>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <h2>Solicita el envío de este recurso por mail</h2>
-        <p>{{ form.nombre }}</p>
-        <p>{{ form.email }}</p>
-
-        <input type="submit" value="Solicitar">
-
-    </form>
-
-</div>
 
 </body>
 
