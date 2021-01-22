@@ -20,36 +20,29 @@ def recursos(request):
 
 def detalle_recursos(request, pk):
     recurso = get_object_or_404(Recurso, pk=pk)
-    print(recurso.pk)
+    logrado = False
     if request.method == 'POST':
-        form = EnvioRecursoForm(request.POST, request.FILES)
-        if form.is_valid:
+        form = EnvioRecursoForm(request.POST)
+        print('post logrado')
+        if form.is_valid():
+            print('isvalid true')
             # guardado de solicitud en BBDD
+
             recurso_enviado = form.save(commit=False)
-            recurso_enviado.recurso_enviado = recurso.pk
+            recurso_enviado.recurso_enviado = recurso
             recurso_enviado.save()
-
-
-
-            # from django.core.mail import EmailMessage
-
-
-            # msg = EmailMessage('Subject of the Email', 'Body of the email', 'from@email.com', ['to@email.com'])
-            # msg.content_subtype = "html"  
-            # msg.attach_file('pdfs/Instructions.pdf')
-            # msg.send()
-
-
+            
             texto_email = '''<h1>Gracias por confiar en nosotros</h1><br>
             <h2>Saludos de <a href="nomade-digital.com.ar">Nómade Digital</a></h2>'''
 
-
+            
             # envio de mail con archivo adjunto
             msg = EmailMessage(f'Nomade Digital te envía el que solicitaste.', texto_email, 'desarrolloyprog@gmail.com', [str(form.cleaned_data['email'])])
             msg.content_subtype = 'html'
-            msg.attach_file(str(recurso.archivo))
-            msg.send
+            msg.attach_file('media/'+(str(recurso.archivo)))
+            msg.send()
 
+            logrado = True
 
         
     else:
@@ -58,7 +51,7 @@ def detalle_recursos(request, pk):
 
 
 
-    return render(request, 'recursos/detalle_recursos.html', {'recurso': recurso, 'form':form})
+    return render(request, 'recursos/detalle_recursos.html', {'recurso': recurso, 'form':form, 'logrado': logrado})
 
 
 @login_required
