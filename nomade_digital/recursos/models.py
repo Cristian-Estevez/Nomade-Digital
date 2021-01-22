@@ -30,4 +30,4 @@ class EnvioRecurso(models.Model):
     nombre = models.CharField(max_length=200)
     email = models.EmailField()
     fecha = models.DateTimeField(default=timezone.now)
-    recurso_enviado = models.ForeignKey(Recurso, on_delete=models.CASCADE, related_name='enviados')
+    recurso_enviado = models.ForeignKey(Recurso, on_delete=models.CASCADE, related_name='enviados', null=True, blank=True)
