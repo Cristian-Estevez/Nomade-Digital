@@ -25,10 +25,7 @@
 </head>
 
 <body>
-
     
-
-
     <!-- HEADER--------- -->
     <header>
         
@@ -61,12 +58,12 @@
                     </div>
                     <div class="barra">
 
-                        <a href="#nav" class="mobile-menu">
+                        <a href="#" class="mobile-menu">
                             <i class="fas fa-bars"></i>
                         </a>
 
-                        <nav class="contenedor-barra" id="nav">
-                            <ul>
+                        <nav class="contenedor-barra contenedor-barra-inactivo " id="stickyMenu">
+                            <ul >
                                 <li><a href="sobremi.html">Sobre mí</a></li>
                                 <li><a href="servicios.html">Servicios</a></li>
                                 <li><a href="{% url 'recursos:recursos'%}">Recursos</a></li>
@@ -78,7 +75,7 @@
                             <input type="search" placeholder="  ¿Que buscás?" class="buscador">
                             
 
-                            <a href="#" class="cerrar">
+                            <a href="#" class="cerrar" id="cerrar">
                                 <i class="fas fa-times"></i>
                             </a>
                         </nav>
@@ -261,17 +258,99 @@
 
     <!--<script src="js/carrusel.js"></script>-->
     <!--<script src="{% static 'index/js/carrusel.js' %}"></script>-->
-    <!-- <script>
-        const mensajeAparece = document.querySelector('mensaje-aparece');
-        alert('{{ mensaje }}, respondere a la brevedad')
+    
 
-        mensajeAparece.addEventListener('click', () => {
-            mensajeAparece.remove('mensaje-aparece');
-        })
+    <script>
+        //MENU HAMBURGUESA FIJO
+        
+        //menu fixed responsive
+            window.onscroll = function() {
+                let ubicacion = window.pageYOffset;
+                if ( ubicacion <= 100) {
+                      console.log('apagado el boton')
+                      activo.classList.remove('activo')
+                      barraAbrir.classList.remove('activoResponsive')
+                    // activo.classList.add('inactivo')
+                    
+                } else {
+                      console.log('prendido el boton')
+                    // insertarMenuBtn();
+                      barraAbrir.classList.add('activoResponsive')
+                     nav.classList.add('activoResponsive')
+                     activo.classList.add('activo')
+                    }
+            }
+        //menu fijo pantalla grande
+        const activo = document.querySelector('#stickyMenu')
+        
+            // window.onscroll = function() {
+            //     let ubicacion = window.pageYOffset;
+            //     if ( ubicacion <= 100) {
+            //           console.log('apagado el boton')
+            //          activo.classList.remove('activo')
+            //         // activo.classList.add('inactivo')
+                    
+            //     } else {
+            //           console.log('prendido el boton')
+            //         // insertarMenuBtn();
+            //          activo.classList.add('activo')
+            //     }
+            // }
+
+            //menu responsive abrir/cerrar
+
+const barraAbrir = document.querySelector('.barra a')
+const barraCerrar = document.querySelector('#cerrar') 
+const barra = document.querySelector('.contenedorBarraInactivo')
+const nav = document.querySelector('nav')
+
+
+addEventListeners()
+function addEventListeners() {
+
+    //abrir menu responsive
+    barraAbrir.addEventListener('click', (e) => {
+        e.preventDefault()
+            nav.classList.add('contenedor-barra-activo')
+            nav.classList.remove('contenedor-barra-inactivo')
+            nav.classList.remove('activoResponsive')
+        
+    })
+
+    //cerrar menu responsive
+    barraCerrar.addEventListener('click', (e) => {
+        e.preventDefault()
+        nav.classList.remove('contenedor-barra-activo')
+        nav.classList.add('contenedor-barra-inactivo')
+    })
+}
+
+    
+    
+
+
+            
+            // activo.addEventListener('click', () => {
+            //     const menuApertura = document.querySelector('div')
+            //     let ubicacion = window.pageYOffset;
+            //     if(menuApertura.classList.contains('despliegueActivo')) {
+            //         console.log('se desactivo el menu')
+            //         menuApertura.classList.add('despliegueMenu')
+            //         menuApertura.classList.remove('despliegueActivo')
+            //     } 
+                
+            //     else if (menuApertura.classList.contains('despliegueMenu') || ubicacion <= 500){
+            //         console.log('se activo el menu')
+            //         menuApertura.classList.add('despliegueActivo')
+            //         menuApertura.classList.remove('despliegueMenu')
+            //     }
+            // })
+            
+            
 
         
 
-    </script> -->
+    </script>
 </body>
 
 </html>

@@ -105,6 +105,7 @@
         .contenedor-barra ul{
             margin: 0 auto;
             padding: 0;
+            
         }
 
         /* MEDIA QUERY HEADER */
@@ -120,6 +121,7 @@
             
             .contenedor-nav {
                 width: 90%;
+                
             }
             .iconos {
                 display: flex;
@@ -207,11 +209,14 @@
                 display: block;
                 padding: 20px 0;
             }
-            #nav:target {
-                max-height: 800px;
+            
+            .contenedor-barra-inactivo {
+                display: none;
+                transition: 1s;
             }
-            .contenedor-barra {
-                max-height: 0;
+            .contenedor-barra-activo {
+                max-height: 800px;
+                transition: 1s;
             }
         }
     
@@ -856,6 +861,43 @@ LISTA BORRADORES POST------- */
         margin-right: 2rem;
     }
 
-   .mensaje-aparece{
-       display: none;
-   }
+   
+    /* menu fijo pantalla grande */
+ @media (max-width: 995px){
+    .activoResponsive{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: black;
+        padding: 20px 20px;
+        font-size: 3rem;
+        border-radius: 5px;
+    }
+ }
+    
+    @media (min-width: 996px){
+        .inactivo{
+            display: none;
+        }
+        .activo{
+         position: fixed; 
+         transition: 0.4s; 
+         top: 0;
+         left: 0;
+         background-color: orange;
+         transition: 0.4s; 
+         margin-top: 0;
+         padding: 2rem!important;
+         width: 100%;
+         display: flex!important;
+         justify-content: center!important;
+        }
+     
+        .activo li a{
+            color: white;
+            font-weight: 700;
+        }
+    }
+   
+
+   
