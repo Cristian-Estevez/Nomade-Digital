@@ -865,7 +865,7 @@ LISTA BORRADORES POST------- */
     /* menu fijo pantalla grande */
  @media (max-width: 995px){
     .activoResponsive{
-        position: fixed;
+        position: fixed!important;
         bottom: 20px;
         right: 20px;
         background-color: black;
@@ -880,7 +880,7 @@ LISTA BORRADORES POST------- */
             display: none;
         }
         .activo{
-         position: fixed; 
+         position: fixed!important; 
          transition: 0.4s; 
          top: 0;
          left: 0;
