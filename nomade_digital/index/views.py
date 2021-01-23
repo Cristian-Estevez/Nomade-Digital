@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 from .forms import ConsultaForm
 from django.core.mail import send_mail
 from django.utils import timezone
+from .models import Consulta
 
 
 # Create your views here.
@@ -19,9 +20,17 @@ def index(request):
         if form.is_valid:
             print(form)
             mensaje = form.cleaned_data.get("nombre")
-            form.save()
-            
+            print(mensaje)
 
+            try:
+                existe_en_base = get_object_or_404(Consulta, email=form.cleaned_data.get("email"))
+            except:
+                existe_en_base = False
+
+            if existe_en_base:            
+                
+                form.save()
+                print('se guardó en base de datos')
 
             send_mail(
                 f'{form.cleaned_data.get("email")}',
