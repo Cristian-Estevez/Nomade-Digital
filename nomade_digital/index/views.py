@@ -20,17 +20,8 @@ def index(request):
         if form.is_valid:
             print(form)
             mensaje = form.cleaned_data.get("nombre")
-            print(mensaje)
-
-            try:
-                existe_en_base = get_object_or_404(Consulta, email=form.cleaned_data.get("email"))
-            except:
-                existe_en_base = False
-
-            if existe_en_base:            
-                
-                form.save()
-                print('se guardó en base de datos')
+            form.save()
+            
 
             send_mail(
                 f'{form.cleaned_data.get("email")}',
@@ -38,12 +29,9 @@ def index(request):
                 f'Mensaje enviado de : {form.cleaned_data.get("nombre")}\nResponder a: {form.cleaned_data.get("email")} \n{form.cleaned_data.get("mensaje")}',
                 
                 f'{form.cleaned_data.get("email")}',
-                ['desarrolloyprog@gmail.com', 'fiorellagiammarino@gmail.com', 'fernandezdavid1992@gmail.com'],
+                ['desarrolloyprog@gmail.com'], # 'fiorellagiammarino@gmail.com',  'fernandezdavid1992@gmail.com', 
                 fail_silently=False,
             )
-
-        
-
     else:
         mensaje = None
         form = ConsultaForm()
