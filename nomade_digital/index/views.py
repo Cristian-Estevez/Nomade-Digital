@@ -32,6 +32,7 @@ def index(request):
                 ['desarrolloyprog@gmail.com'], # 'fiorellagiammarino@gmail.com',  'fernandezdavid1992@gmail.com', 
                 fail_silently=False,
             )
+ 
     else:
         mensaje = None
         form = ConsultaForm()
