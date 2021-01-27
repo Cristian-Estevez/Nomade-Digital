@@ -32,6 +32,7 @@
             border: none;
             font-size: 1.5rem;
             transition: .3s;
+            border-radius: 5px;
             
             
         }
@@ -212,11 +213,11 @@
             
             .contenedor-barra-inactivo {
                 display: none;
-                transition: 1s;
+                transition: 1.5s ease-in-out;
             }
             .contenedor-barra-activo {
                 max-height: 800px;
-                transition: 1s;
+                transition: 1.5s ease-in-out;
             }
         }
     
@@ -245,7 +246,7 @@
             background-image: url(../img/fondo.png);
             background-position: center center;
             background-size: cover;
-            height: 90vh;
+            height: 65vh;
             margin-bottom: 0;
         }
 
@@ -312,6 +313,7 @@
             background-color: gray;
             text-align: center;
             font-size: 2.2rem;
+            margin: 0;
             border-radius: .5rem;
             line-height: 2.8rem;
             font-weight: 700;
@@ -384,9 +386,9 @@
         }
         
         .recurso h3 {
-            padding: 1rem 1.5rem;
+            margin: 1rem;
             text-align: center;
-            font-weight: 1000;
+            font-weight: 700;
         }
         /* CARRUSEL--------- */
         
@@ -458,6 +460,8 @@
             margin: 0 auto;
         }
 
+        
+
         .contenedor-formulario a {
             order: 1;
         }
@@ -466,6 +470,11 @@
         }
         .contenedor-formulario a, button{
             align-self: flex-end;
+        }
+
+        .contenedor-formulario p {
+            font-weight: 700;
+            padding-top: 3rem;
         }
 
         
@@ -486,7 +495,8 @@
         .contenedor-formulario textarea {
             font-size: 1.6rem;
             border-radius: .5rem;
-            height: 8rem!important;
+            width: 90%;
+            margin-top: 2rem;
         }
         
         .contenedor-boton-submit {
@@ -502,10 +512,12 @@
 
         footer {
             padding: 3rem 0 2rem 0;
-            background-color: rgb(216, 215, 215);
+            margin-top: 4rem;
+            background-color: rgba(255, 64, 0, 0.637);
             text-align: center;
             font-size: 1.8rem;
             color: black;
+            font-weight: 700;
         }
 
 
@@ -667,10 +679,17 @@ EDITAR POST------- */
 ------ADMINISTRACION BLOG
 DETALLE POST------- */
 
+        .hr{
+            margin-top: 3rem;
+            height: 6px;
+            background-color: orange;
+            color: orange;
+            border: none;
+        }
         .contenedor-detalle-post{
             display: flex;
             flex-wrap: wrap;
-            
+            line-height: 3rem;
         }
 
         .contenedor-detalle-post i{
@@ -703,17 +722,17 @@ DETALLE POST------- */
 
         .contenedor-detalle-post-titulos h2, p{
             margin-bottom: 3rem;
-            text-transform: capitalize;
+            
         }
 
-        .contenedor-detalle-post-titulos p {
-            text-align: left;
-            padding-top: 5rem;
-        }
+        .detalle-post-ti
+
+        
 
         .contenedor-detalle-post-titulos img{
-            width: 50%;
+            width: 100%;
             text-align: center;
+            margin-bottom: 3rem;
         }
 
         .contenedor-comentarios{
@@ -721,9 +740,21 @@ DETALLE POST------- */
             flex-direction: column;
         }
 
+        .textos-detalle-post p{
+            margin-top: 5rem;
+            width: 100%;
+            text-align: center;
+            margin: 5rem auto;
+        }
         @media (min-width:996px){
+            .textos-detalle-post p{
+                width: 80%;
+            }
             .contenedor-comentarios{
                 flex-direction: row;
+            }
+            .contenedor-detalle-post-titulos img{
+                width: 50%;
             }
         }
 
@@ -732,10 +763,15 @@ DETALLE POST------- */
             flex: 0 0 50%;
         }
 
-        .text-area-comentario{
-            height: 200px;
-            width: 90%;
+        .datos-comentario>p>input{
+            margin-top: 2rem;
         }
+
+        .datos-comentario p{
+            margin-bottom: 4rem;
+        }
+        
+
 
         .formato-comentarios{
             margin-top: 8rem;
@@ -758,7 +794,7 @@ DETALLE POST------- */
         }
 
         .contenido-comentario{
-            height: 100px;
+            
             border: solid 2px rgb(255, 102, 0);
             padding: 2rem;
             margin-bottom: 2rem;
@@ -767,12 +803,18 @@ DETALLE POST------- */
         }
 
         .contenido-comentario i {
+            display: block;
             text-align: right;
             line-height: 1.8rem;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .contenido-comentario p{
-            font-weight: 100;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 3rem;
+            padding-bottom: 2rem;
         }
 
         .contenedor-jodido{
@@ -791,16 +833,25 @@ DETALLE POST------- */
             
             .contenido-comentario{
                 
-                flex: 0 0 calc(30% - 2rem);
+                flex: 0 0 calc(45% - 2rem);
+                height: 100%;
                 
             }
+            
         }
 
-        .contenedor-comentarios-article p{
+        .contenedor-comentarios-article span{
             flex-basis: 100%;
             text-align: center;
+            font-size: 3rem;
+            display: block;
+            font-weight: 700;
+            padding-bottom: 3rem;
         }
-        
+        .contenedor-comentarios-article p{
+            
+            text-align: left;
+        }
 
 
 
@@ -846,9 +897,10 @@ LISTA BORRADORES POST------- */
         margin: 3rem 0;
     }
 
-    .formato-comentarios input {
+    .formato-comentarios input:not(input[type="submit"]) {
         display: block;
         margin: 0 auto;
+        padding: .5rem;
     }
         
     .contenedor-jodido-2{
@@ -863,7 +915,7 @@ LISTA BORRADORES POST------- */
 
    
     /* menu fijo pantalla grande */
- @media (max-width: 995px){
+ @media (max-width: 996px){
     .activoResponsive{
         position: fixed!important;
         bottom: 20px;
@@ -876,9 +928,7 @@ LISTA BORRADORES POST------- */
  }
     
     @media (min-width: 996px){
-        .inactivo{
-            display: none;
-        }
+        
         .activo{
          position: fixed!important; 
          transition: 0.4s; 

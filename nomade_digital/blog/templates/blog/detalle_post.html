@@ -37,14 +37,14 @@
             {% if post.imagen.url is not None %}
                 <img src='{{ post.imagen.url }}'>
             {% endif %}
-
-            <p class="detalle-post-titulos">{{ post.texto|safe }}</p>
+                <div class="textos-detalle-post">
+            <p >{{ post.texto|safe }}</p>
         
             
            
 
             {% if imagenes is not None %}
-
+        </div>
                 {% for imagen in imagenes %}
                     <img src="{{ imagen.imagenes.url }}">
                 {% endfor %}
@@ -65,7 +65,7 @@
             <a href="#comentarios" class="boton boton-lista-post">Ver {{ comentarios.count }} comentarios</a>
         {% if nuevo_comentario %}
             
-            <p>Gracias por escribirme; tu comentario será publicado lo antes posible. </p>
+            <p>Gracias por escribirme</p>
             
         {% else %}
         <h3>Dejá tu comentario</h3>
@@ -77,7 +77,7 @@
                     <p>E-mail: {{ form.email }}</p>
                 </div>
 
-                <div class="datos-comentario">
+                <div class="datos-comentario" >
                     <p>Comentarios: {{ form.texto }}</p>
                 </div>
                 
@@ -94,8 +94,9 @@
     <!-- Comentarios        Publicados         ---------------------------------->
     
 <div class="contenedor">
+    <hr class="hr">
     <div class="contenedor-comentarios-article">
-        <p><strong id="comentarios">comentarios</strong></p>
+        <span id="comentarios"> Comentarios</span>
         {% for comentario in comentarios %}
             <article class="contenido-comentario">
                 <p>{{ comentario.texto }}</p>

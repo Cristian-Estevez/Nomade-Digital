@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 
     
 
-    <title>Nomade Digital Blog</title>
+    <title>Blog Nómade Digital</title>
 </head>
 <body>
     
@@ -53,10 +53,10 @@
         </div>
         <div class="contenedor-nav">
             <div class="iconos">
-                <a href=""><i class="fab fa-behance-square"></i></a>
-                <a href=""><i class="fas fa-envelope"></i></a>
-                <a href=""><i class="fab fa-facebook-square"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href="https://www.behance.com"><i class="fab fa-behance-square"></i></a>
+                <a href="https://www.facebook.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.gmail.com"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
             </div>
             <div class="barra">
 
@@ -64,7 +64,7 @@
                     <i class="fas fa-bars"></i>
                 </a>
 
-                <nav class="contenedor-barra" id="nav">
+                <nav class="contenedor-barra contenedor-barra-inactivo " id="stickyMenu">
                     <ul>
                         <li><a href="sobremi.html">Sobre mí</a></li>
                         <li><a href="servicios.html">Servicios</a></li>
@@ -77,7 +77,7 @@
                     <input type="search" placeholder="  ¿Que buscás?" class="buscador">
                     
 
-                    <a href="#" class="cerrar">
+                    <a href="#" id="cerrar" class="cerrar">
                         <i class="fas fa-times"></i>
                     </a>
                 </nav>
@@ -103,6 +103,83 @@
     <footer>
         <i>Todos los derechos reservados</i>
     </footer>
+
+    <script>
+    //MENU HAMBURGUESA FIJO
+        
+    //VER ELIMINAR PREVENT DEFAULT CON EL LINK RESPONSIVE
+    
+    //menu fixed responsive
+        window.onscroll = function() {
+            let ubicacion = window.pageYOffset;
+            if ( ubicacion <= 200) {
+                //   console.log('apagado el boton')
+                  activo.classList.remove('activo')
+                  barraAbrir.classList.remove('activoResponsive')
+                // activo.classList.add('inactivo')
+                
+            } else {
+                //   console.log('prendido el boton')
+                // insertarMenuBtn();
+                
+                  barraAbrir.classList.add('activoResponsive')
+                 nav.classList.add('activoResponsive')
+                 activo.classList.add('activo')
+                 
+                }
+        }
+    //menu fijo pantalla grande
+    const activo = document.querySelector('#stickyMenu')
+    
+        // window.onscroll = function() {
+        //     let ubicacion = window.pageYOffset;
+        //     if ( ubicacion <= 100) {
+        //           console.log('apagado el boton')
+        //          activo.classList.remove('activo')
+        //         // activo.classList.add('inactivo')
+                
+        //     } else {
+        //           console.log('prendido el boton')
+        //         // insertarMenuBtn();
+        //          activo.classList.add('activo')
+        //     }
+        // }
+
+        //menu responsive abrir/cerrar
+
+const barraAbrir = document.querySelector('.barra a')
+const barraCerrar = document.querySelector('#cerrar') 
+const barra = document.querySelector('.contenedorBarraInactivo')
+const nav = document.querySelector('nav')
+
+
+addEventListeners()
+function addEventListeners() {
+
+
+//cerrar menu responsive
+barraCerrar.addEventListener('click', (e) => {
+    e.preventDefault()
+    nav.classList.remove('activoResponsive')
+    nav.classList.remove('contenedor-barra-activo')
+    nav.classList.add('contenedor-barra-inactivo')
+})
+
+//abrir menu responsive
+barraAbrir.addEventListener('click', (e) => {
+    e.preventDefault()
+        nav.classList.add('contenedor-barra-activo')
+        nav.classList.remove('contenedor-barra-inactivo')
+        
+        
+})
+
+
+
+}
+</script>
+
+
 
 </body>
 
