@@ -98,7 +98,7 @@ def nuevo_recurso(request):
 
     else:
         form = RecursoForm
-        return render(request, 'recursos/editar_recursos.html', {'form': form})
+        return render(request, 'recursos/editar_recursos.html', {'form': form,})
 
 
 @login_required
