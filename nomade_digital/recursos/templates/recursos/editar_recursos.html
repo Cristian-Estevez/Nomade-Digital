@@ -21,7 +21,9 @@
             <button type="submit" value="Guardar" class="boton boton-lista-post">Guardar</button>
             
             <a href="{% url 'recursos:lista_borrador_recursos' %}" class="boton boton-lista-post">Cancelar</a>
+            <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Editar</a>
             
+
             {% if recurso %}
             <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Eliminar definitivamente</a>
             {% endif %}
