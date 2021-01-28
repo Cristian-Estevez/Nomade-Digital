@@ -44,9 +44,9 @@
                     <div class="contenido-blog">
                     
                         <a href="#" >
-
+                            {% if recurso.imagen %}
                             <img src='{{ recurso.imagen.url }}'>
-                            
+                            {% endif %}
                         </a>
 
                             <h2>{{ recurso.titulo }}</h2>
