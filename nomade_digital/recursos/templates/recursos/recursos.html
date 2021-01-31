@@ -66,3 +66,23 @@
 </body>
 {% endblock %}
 <!-- </html>-->
+
+
+
+
+<!-- <div class="contenido-blog contenido-blog-descargable">
+                    
+                <a href="#" >
+                    {% if recurso.imagen %}
+                    <img src='{{ recurso.imagen.url }}'>
+                    {% endif %}
+                </a>
+
+                    <h2>{{ recurso.titulo }}</h2>
+                    <p>{{ recurso.texto|truncatewords:15|safe }}</p>
+                    <a href="{% url 'recursos:detalle_recursos' pk=recurso.pk %}" class="boton boton-descargable">
+                        Ver más
+                    </a>
+                    
+                
+            </div> -->
