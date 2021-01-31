@@ -42,7 +42,7 @@
         <div>
             <form action="" class="formato-comentarios" method="POST">
                 {% csrf_token %}
-                <h2>Solicita el envío de este recurso por mail</h2>
+                <p>Solicita el envío de este recurso por mail</p>
                 <p>{{ form.nombre }}</p>
                 <p>{{ form.email }}</p>
                 
@@ -50,9 +50,7 @@
             </form>
         </div>
         
-            <div class="contenedor contenedor-lista-recursos contenedor-jodido-2">
-
-        </div>
+           
         {% elif not logrado %}
         
         {% else %}

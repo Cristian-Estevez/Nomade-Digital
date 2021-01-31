@@ -13,18 +13,18 @@
         
         {% if user.is_authenticated %}
 
-        <a class="boton boton-lista-post detalle-post" href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a>
+        <a class="boton boton-lista-post" href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a>
         
         {% endif %}
 
     {% endif %}
     
-        <a class="boton boton-lista-post detalle-post" href="{% url 'blog:lista_posts' %}">Volver al Blog</a>
+        <a class="boton boton-lista-post" href="{% url 'blog:lista_posts' %}">Volver al Blog</a>
 
     {% if user.is_authenticated %}
 
-        <a href="{% url 'blog:editar_post' pk=post.pk %}" class="boton boton-lista-post detalle-post">Editar</a>
-        <a href="{% url 'blog:borrar_post' pk=post.pk %}" class="boton boton-lista-post detalle-post">Borrar</a>
+        <a href="{% url 'blog:editar_post' pk=post.pk %}" class="boton boton-lista-post">Editar</a>
+        <a href="{% url 'blog:borrar_post' pk=post.pk %}" class="boton boton-lista-post">Borrar</a>
         
         
 
