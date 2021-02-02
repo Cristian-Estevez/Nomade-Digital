@@ -27,7 +27,7 @@
     </div>
     {% endif %}
 
-    <div class="contenedor contenedor-recursos-interna">
+    <div class="contenedor contenedor-interno">
         <h2>Recursos Marketing Digital y Blog</h2>
 
         <p>En esta biblioteca vas a encontrar artículos y recursos gratuitos que te ayudarán a potenciar tu marca en Internet.</p>
@@ -36,32 +36,35 @@
 
     <!-- ES EL MISMO CODIGO QUE EL DEL BLOG -->
 
-    <div class="contenedor-blog-interno">
+    <main class="contenedor-entradas">
         
 
-            {% for recurso in recursos %}
+        {% for recurso in recursos %}
                 
-                    <div class="contenido-blog">
+            <article class="contenedor-entrada">
                     
-                        <a href="#" >
-                            {% if recurso.imagen %}
-                            <img src='{{ recurso.imagen.url }}'>
-                            {% endif %}
-                        </a>
+                <a href="#" >
+                    {% if recurso.imagen %}
+                    <img src='{{ recurso.imagen.url }}'>
+                    {% endif %}
+                </a>
+                
+                <hr>
 
-                            <h2>{{ recurso.titulo }}</h2>
-                            <p>{{ recurso.texto|truncatewords:15|safe }}</p>
-                            <a href="{% url 'recursos:detalle_recursos' pk=recurso.pk %}" class="boton boton-blog">
-                                Ver más
-                            </a>
+                <h2>{{ recurso.titulo }}</h2>
+                <p>{{ recurso.texto|truncatewords:15|safe }}</p>
+               
+                <a href="{% url 'recursos:detalle_recursos' pk=recurso.pk %}" class="boton boton-blog">
+                    Ver más
+                </a>
                             
                         
-                    </div>
+            </article>
             
             {% endfor %}
 
             
-    </div>
+        </main>
             
 </body>
 {% endblock %}

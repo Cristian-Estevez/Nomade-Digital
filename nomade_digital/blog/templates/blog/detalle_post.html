@@ -2,14 +2,15 @@
 
 {% block content %}
 
-    <div class="contenedor contenedor-detalle-post">
+    <div class="contenedor contenedor-detalle-article">
             <div class="contenedor-jodido">
     {% if post.publicado %}
 
     
         <i>Publicado: {{ post.publicado }}</i>
+    {% endif %}
 
-    {% else %}      
+    {% if not post.publicado %}      
         
         {% if user.is_authenticated %}
 
@@ -31,13 +32,13 @@
     {% endif %}
 </div>
 
-        <div class=" contenedor-detalle-post-titulos">
-            <h2 class="detalle-post-titulos">{{ post.titulo }}</h2>
+        <div class=" contenedor-article">
+            <h2 class="detalle-article-titulos">{{ post.titulo }}</h2>
 
             {% if post.imagen.url is not None %}
                 <img src='{{ post.imagen.url }}'>
             {% endif %}
-                <div class="textos-detalle-post">
+                <div class="detalle-article-texto">
             <p >{{ post.texto|safe }}</p>
         
             

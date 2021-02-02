@@ -544,13 +544,13 @@
 /* PAGINAS INTERNAS----------
 ------BLOG------- */
 
-        .contenedor-blog-interno {
+        .contenedor-entradas {
             width: 90%;
             margin: 4rem auto;
             
         }
         
-        .contenido-blog{
+        .contenedor-entrada{
             margin-bottom: 4rem;
             transition: .5s;
             border: 5px solid  rgb(238, 72, 16);
@@ -559,7 +559,7 @@
             padding: 2px 3px;
         }
         
-        .contenido-blog:hover{
+        .contenedor-entrada:hover{
             -webkit-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
             -moz-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
             box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
@@ -571,37 +571,37 @@
             box-shadow: -3px 4px 15px 5px rgba(21,68,197,1);
         }
         
-        .contenido-blog p{
+        .contenedor-entrada p{
             padding: 1rem;
             color: rgb(102, 102, 102);
         }
         
-        .contenido-blog h2{
+        .contenedor-entrada h2{
             text-transform: uppercase;
             padding: 2rem;
             
         }
 
-        .contenido-blog a{
+        .contenedor-entrada a{
             text-align: center;
             text-transform: uppercase;
         }
         
-        .contenido-blog hr{
+        .contenedor-entrada hr{
             height: 2px;
             color: orangered;
             background-color: orangered;
             width: 50%;
         }
 
-        .contenido-blog a img{
+        .contenedor-entrada a img{
             display: block;
             margin: 2rem auto;
             max-width: 70%;
             
         }
         @media (min-width:996px){
-            .contenedor-blog-interno{
+            .contenedor-entradas{
                 display: flex;
                 justify-content: space-evenly;
                 flex-wrap: wrap;
@@ -609,11 +609,11 @@
                 margin-top: 3rem;
             }
             
-            .contenido-blog{
+            .contenedor-entrada{
                 flex: 0 1 calc(30% - 3rem);                 
             }
 
-            .contenido-blog a img{
+            .contenedor-entrada a img{
                 max-width: 100%;
                 margin-top: 0;
             }
@@ -696,18 +696,18 @@ DETALLE POST------- */
             color: orange;
             border: none;
         }
-        .contenedor-detalle-post{
+        .contenedor-detalle-article{
             display: flex;
             flex-wrap: wrap;
             line-height: 3rem;
         }
 
-        .contenedor-detalle-post a {
+        .contenedor-detalle-article a {
             display: block;
             margin: 0 auto;
             margin-right: 1rem;
         }
-        .contenedor-detalle-post i{
+        .contenedor-detalle-article i{
             padding: 1rem;
             font-size: 1.5rem;
             background-color: rgb(109, 109, 109);
@@ -721,28 +721,23 @@ DETALLE POST------- */
             margin-right: 1rem;
         }
 
-        .contenedor-detalle-post-titulos{
+        .contenedor-article{
             flex: 0 0 90%;
-            order: -1;
             margin: 3rem auto;
             font-size: 1.6rem;
             text-align: center;
         }
 
-        .contenedor-detalle-post-titulos h2{
+        .contenedor-detalle-article h2{
             font-weight: 900;
         }
 
-        .contenedor-detalle-post-titulos h2, p{
+        .contenedor-detalle-article h2, p{
             margin-bottom: 3rem;
             
         }
 
-        .detalle-post-ti
-
-        
-
-        .contenedor-detalle-post-titulos img{
+        .contenedor-detalle-article img{
             width: 100%;
             text-align: center;
             margin-bottom: 3rem;
@@ -753,20 +748,20 @@ DETALLE POST------- */
             flex-direction: column;
         }
 
-        .textos-detalle-post p{
+        .detalle-article-texto p{
             margin-top: 5rem;
             width: 100%;
             text-align: center;
             margin: 5rem auto;
         }
         @media (min-width:996px){
-            .textos-detalle-post p{
+            .detalle-article-texto p{
                 width: 80%;
             }
             .contenedor-comentarios{
                 flex-direction: row;
             }
-            .contenedor-detalle-post-titulos img{
+            .contenedor-detalle-article img{
                 width: 50%;
             }
         }
@@ -833,7 +828,7 @@ DETALLE POST------- */
         .contenedor-jodido{
             display: flex;
             flex-wrap: wrap;
-            
+            order: 1;
             margin: 0 auto;
         }
         @media (min-width:996px){
@@ -885,19 +880,21 @@ LISTA BORRADORES POST------- */
 /* PAGINAS INTERNAS----------
 ------RECURSOS------- */
         
-    .contenedor-recursos-interna{
+    .contenedor-interno{
+
         text-align: center;
         max-width: 60%;
-        margin-top: 3rem;
+        margin-top: 5rem;
+        height: 30vh;
     }
 
-    .contenedor-recursos-interna h2{
-        font-size: 3rem;
+    .contenedor-interno h2{
+        font-size: 4rem;
         margin-bottom: 2rem;
     }
 
-    .contenedor-recursos-interna p {
-        font-size: 1.8rem;
+    .contenedor-interno p {
+        font-size: 2.5rem;
     }
 
     /* PAGINAS INTERNAS----------

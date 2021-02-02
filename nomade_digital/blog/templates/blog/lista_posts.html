@@ -13,36 +13,39 @@
         
     </div>
     {% endif %}
+    <div class="contenedor contenedor-interno">
+        <h2>Blog Nomade Digital</h2>
 
+        <p>En esta biblioteca vas a encontrar artículos y recursos gratuitos que te ayudarán a potenciar tu marca en Internet.</p>
+
+    </div>
     
-    <main class="contenedor-blog-interno">
-
-            {% for post in posts %}
+    <main class="contenedor-entradas">
+        
+        {% for post in posts %}
                
-                    <div class="contenido-blog">
-                        <a href="{% url 'blog:detalle_post' pk=post.pk %}" >
+        <article class="contenedor-entrada">
+            <a href="{% url 'blog:detalle_post' pk=post.pk %}" >
                             
-                            {% if post.imagen.url is not None %}
-                            <img src='{{ post.imagen.url }}'>
-                            {% endif %}
-                        </a>
-                        <hr>
-                            <h2>{{ post.titulo }}</h2>
-                            
-                            <p>{{ post.texto|safe|truncatewords:15 }}</p>
-                            <a href="{% url 'blog:detalle_post' pk=post.pk %}" class="boton">
-                                Ver más >>
-                            </a>
-                            
+                {% if post.imagen.url is not None %}
+                <img src='{{ post.imagen.url }}'>
+                {% endif %}
+            </a>
+                
+            <hr>
                         
-                    </div>
+            <h2>{{ post.titulo }}</h2>
+            <p>{{ post.texto|safe|truncatewords:15 }}</p>
+            <a href="{% url 'blog:detalle_post' pk=post.pk %}" class="boton">
+                Ver más >>
+            </a>
+                            
+        </article>
             <!--<p><h2><a href='{% url "blog:detalle_post" pk=post.pk %}'>{{ post.titulo }}</a></p>
             <p>{{ post.texto|linebreaksbr|truncatechars:200 }}</p>-->
                     
-                
-
             {% endfor %}
-            </main>
+    </main>
 
 
 </body>

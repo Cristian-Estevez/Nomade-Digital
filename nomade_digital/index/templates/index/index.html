@@ -69,7 +69,7 @@
                                 <li><a href="{% url 'recursos:recursos'%}">Recursos</a></li>
                                 <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  <!--cambié codigo aca-->
                                 <li><a href="cursos.html">Cursos</a></li>
-                                <li><a href="contacto.html">Contacto</a></li>
+                                <li><a href="#contacto">Contacto</a></li>
                             </ul>
 
                             <input type="search" placeholder="  ¿Que buscás?" class="buscador">
@@ -226,7 +226,7 @@
 
 
     {% else %}
-    <section class="formulario" id="formulario">
+    <section class="formulario" id="contacto">
         <div class="contenedor">
 
             
@@ -243,10 +243,6 @@
                     <p>{{ form.mensaje }}</p>
                 </div>
             </div>
-
-                <!-- <input type="text" placeholder="¿Cómo te llamas?">
-                <input type="email" placeholder="¿Cuál es tu e-mail?" required>
-                <textarea> Dejame tu consulta</textarea>  -->
 
                 <div class="contenedor-boton-submit">
                     <input type="submit" class="boton">
@@ -265,11 +261,39 @@
     
 
     <script>
+
         const barraAbrir = document.querySelector('.barra span')
 const barraCerrar = document.querySelector('#cerrar') 
 const barra = document.querySelector('.contenedorBarraInactivo')
 const nav = document.querySelector('nav')
 
+//MENU HAMBURGUESA FIJO
+        
+        //VER ELIMINAR PREVENT DEFAULT CON EL LINK RESPONSIVE
+        
+        //menu fixed responsive
+        window.onscroll = function() {
+                let ubicacion = window.pageYOffset;
+                if ( ubicacion <= 200) {
+                    //   console.log('apagado el boton')
+                      activo.classList.remove('activo')
+                      barraAbrir.classList.remove('activoResponsive')
+                    // activo.classList.add('inactivo')
+                    
+                } else {
+                    //   console.log('prendido el boton')
+                    // insertarMenuBtn();
+                    
+                    barraAbrir.classList.add('activoResponsive')
+                     nav.classList.add('activoResponsive')
+                     activo.classList.add('activo')
+
+                     
+                    }
+                    
+            }
+        //menu fijo pantalla grande
+        const activo = document.querySelector('#stickyMenu')
 
 addEventListeners()
 function addEventListeners() {
@@ -295,33 +319,7 @@ function addEventListeners() {
 
     
 }
-        //MENU HAMBURGUESA FIJO
         
-        //VER ELIMINAR PREVENT DEFAULT CON EL LINK RESPONSIVE
-        
-        //menu fixed responsive
-            window.onscroll = function() {
-                let ubicacion = window.pageYOffset;
-                if ( ubicacion <= 200) {
-                    //   console.log('apagado el boton')
-                      activo.classList.remove('activo')
-                      barraAbrir.classList.remove('activoResponsive')
-                    // activo.classList.add('inactivo')
-                    
-                } else {
-                    //   console.log('prendido el boton')
-                    // insertarMenuBtn();
-                    
-                    barraAbrir.classList.add('activoResponsive')
-                     nav.classList.add('activoResponsive')
-                     activo.classList.add('activo')
-
-                     
-                    }
-                    
-            }
-        //menu fijo pantalla grande
-        const activo = document.querySelector('#stickyMenu')
         
             // window.onscroll = function() {
             //     let ubicacion = window.pageYOffset;
