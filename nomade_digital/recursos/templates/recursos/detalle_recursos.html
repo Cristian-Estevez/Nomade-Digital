@@ -4,10 +4,10 @@
 <body>
     
 
-<div class="contenedor contenedor-detalle-article">
+<div class="contenedor contenedor-detalle-recurso">
     
 
-    <div class=" contenedor-detalle-post-titulos">
+    <div class="contenedor-recurso">
 
         <h2 class="detalle-post-titulos">{{ recurso.titulo }}</h2>
 
@@ -20,10 +20,36 @@
         </p>
 
     </div>
+
+        {% if recurso.archivo and not logrado%}
+    <div class="contenedor-recurso recurso-descarga">
+        <form action="" class="form-solicitar-recursos" method="POST">
+                {% csrf_token %}
+            <h3>Solicita el envío de este recurso por mail</h3>
+            <p>{{ form.nombre }}</p>
+            <p>{{ form.email }}</p>
+                
+            <input type="submit" value="Solicitar" class="boton boton-lista-post">
+        </form>
+    </div>
+        
+           
+        {% elif not logrado %}
+        
+        {% else %}
+    <div>
+        <h2>Se te ha enviado un correo con la información solicitada. No olvides revisar tu casilla de Spam</h2>
+        </div>
+
+        {% endif %}
+    
+</div>
+
+<div>
     {% if recurso.publicado %}
 
     
-                <i>Publicado: {{ recurso.publicado }}</i>
+                <i class="i-publicado">Publicado: {{ recurso.publicado }}</i>
         
             {% else %}      
                 
@@ -36,37 +62,14 @@
             {% endif %} 
 </div>
    
-    <div class="contenedor-lista-recursos">
-        
-        {% if recurso.archivo and not logrado%}
-        <div>
-            <form action="" class="formato-comentarios" method="POST">
-                {% csrf_token %}
-                <p>Solicita el envío de este recurso por mail</p>
-                <p>{{ form.nombre }}</p>
-                <p>{{ form.email }}</p>
-                
-                <input type="submit" value="Solicitar" class="boton boton-lista-post">
-            </form>
-        </div>
-        
-           
-        {% elif not logrado %}
-        
-        {% else %}
-        <div>
-            <h2>Se te ha enviado un correo con la información solicitada. No olvides revisar tu casilla de Spam</h2>
-        </div>
+    <div class="contenedor contenedor-botones muchos-botones">
 
-        {% endif %}
-            
-
-        <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
+            <a href="{% url 'recursos:recursos' %}" class="boton boton-negro" >Volver a Recursos</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
-                <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-lista-post">Lista Borrador Recursos</a>
-                <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Editar</a>
-                <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Eliminar definitivamente</a> 
+                <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-negro">Agregar nuevo recurso</a>
+                <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-negro">Lista Borrador Recursos</a>
+                <a href="{% url 'recursos:editar_recurso' pk=recurso.pk %}" class="boton boton-negro">Editar</a>
+                <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-negro">Eliminar definitivamente</a> 
             {% endif %}
         </div>
         

@@ -54,7 +54,7 @@
 
 
         h2 {
-            margin: 0;
+            margin: 3rem;
             text-transform: uppercase;
             font-size: 2rem;
         }
@@ -74,6 +74,14 @@
 
         img{
             max-width: 100%;
+        }
+
+        .i-publicado{
+            font-size: 1.8rem;
+            padding: 1rem 1.5rem;
+            background-color: grey;
+            color: white;
+            border-radius: 5px;
         }
 
         /* HEADER --------*/
@@ -364,6 +372,7 @@
         }
         /* RECURSOS***-------- */
     
+        
         .recursos h2 {
             margin: 0;
             padding-top: 4rem;
@@ -677,7 +686,7 @@ EDITAR POST------- */
             margin-top: 2rem;
         }
 
-        .boton-lista-post{
+        .boton-negro{
             margin: 2rem 0 .5rem 0;
             font-size: 1.8rem;
             display: inline-block;
@@ -877,9 +886,34 @@ LISTA BORRADORES POST------- */
         }
 
 
-/* PAGINAS INTERNAS----------
+/* PAGINAS INTERNAS USUARIO----------
 ------RECURSOS------- */
-        
+    
+    .contenedor-detalle-recurso{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contenedor-recurso{
+        flex: 0 1 calc(45% - 2rem);
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .contenedor-recurso form{
+        padding: 3rem;
+        background-color: rgb(59, 58, 58);
+        color: white;
+    }
+
+    .recurso-descarga{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 6em;
+    }
+
     .contenedor-interno{
 
         text-align: center;
@@ -895,6 +929,26 @@ LISTA BORRADORES POST------- */
 
     .contenedor-interno p {
         font-size: 2.5rem;
+    }
+
+    /* PAGINAS INTERNAS----------
+------RECURSOS LOGUIN------- */
+
+    .contenedor-botones-recursos{
+        text-align: center;
+        
+}
+
+    .muchos-botones{
+        max-width: 996px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .muchos-botones a{
+        flex: 0 1 calc(20% - 2rem);
+        
     }
 
     /* PAGINAS INTERNAS----------
