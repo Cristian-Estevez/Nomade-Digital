@@ -403,47 +403,28 @@
             text-align: center;
             font-weight: 700;
         }
-        /* CARRUSEL--------- */
-        
-        .carrusel {
-            background-color: rgb(216, 215, 215);
-            padding-top: 3rem;
-        }
-        
-        .carousel {
-            width: 80%;
-            max-width: 120rem;
-            margin: 0 auto;
+        /* ULTIMOS POSTS--------- */
+        .ultimos-posts{
             display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            width: 70%;
+            margin: 3rem auto;
         }
-        
-        #imagen {
-            width: 100%;
-            height: 20rem;
-            background-size: cover;
+
+        .ultimo-post{
+            flex: 0 0 calc(30% - 1rem);
+            border: 5px solid orange;
+            border-radius: 10px;
         }
-        
-        #retroceder,
-        #avanzar {
-            height: 20rem;
-            width: 10rem;
-            background-color: rgb(216, 215, 215);
-            border: none;
+
+        .ultimo-post:hover{
+            transition: 1s;
+            -webkit-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
+            -moz-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
+            box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
         }
-        
-        @media (min-width: 76.8rem) {
-            #imagen {
-                width: 100%;
-                height: 40rem;
-                background-position: center;
-                background-size: cover;
-            }
-            #retroceder,
-            #avanzar {
-                height: 40rem;
-                width: 10rem;
-            }
-        }
+
 
 /* BLOG--------- */
         
