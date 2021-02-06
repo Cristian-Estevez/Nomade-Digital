@@ -19,10 +19,10 @@
 {% block content %}
 <body>
     {% if user.is_authenticated %}
-    <div class="contenedor contenedor-lista-post">
+    <div class="contenedor-botones-recursos">
 
-        <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
-        <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-lista-post">Lista Borrador Recursos</a>
+        <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-negro">Agregar nuevo recurso</a>
+        <a href="{% url 'recursos:lista_borrador_recursos' %}" id="Lista_borrador" class="boton boton-negro">Lista Borrador Recursos</a>
         
     </div>
     {% endif %}
