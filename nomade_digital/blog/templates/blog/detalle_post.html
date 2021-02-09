@@ -58,6 +58,7 @@
     </div>
 
     <!-- agregar Comentarios                 ---------------------------------->
+    {% if not user.is_authenticated %}
     <div class="contenedor">
         
 
@@ -91,7 +92,7 @@
 
         {% endif %}
     </div>
-
+    {% endif %}
     <!-- Comentarios        Publicados         ---------------------------------->
     
 <div class="contenedor">

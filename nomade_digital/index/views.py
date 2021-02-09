@@ -10,7 +10,7 @@ from .models import Consulta
 def index(request):
 
 
-    posts = Post.objects.all().order_by("-publicado")[:5]
+    posts = Post.objects.all().order_by("-publicado")[:3]
     
     
     if request.method == 'POST':
