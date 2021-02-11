@@ -139,3 +139,9 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'desarrolloyprog@gmail.com'
 EMAIL_HOST_PASSWORD = 'eiknmijeehbpnabc'
 EMAIL_USE_TLS = True
+
+CKEDITOR_CONFIGS = {
+    'default': {     
+        'width': "100%",
+    },
+}

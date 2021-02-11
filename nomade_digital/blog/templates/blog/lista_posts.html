@@ -23,30 +23,37 @@
     <main class="contenedor-entradas">
         
         {% for post in posts %}
-               
+        
         <article class="contenedor-entrada">
+            
             <a href="{% url 'blog:detalle_post' pk=post.pk %}" >
                             
                 {% if post.imagen.url is not None %}
                 <img src='{{ post.imagen.url }}'>
                 {% endif %}
             </a>
-                
+            
             <hr>
                         
             <h2>{{ post.titulo }}</h2>
-            <p>{{ post.texto|safe|truncatewords:15 }}</p>
+
+            {% autoescape off %}
+            <p>{{ post.texto|truncatewords:15 }}</p>
+            {% endautoescape %}
+
             <a href="{% url 'blog:detalle_post' pk=post.pk %}" class="boton">
                 Ver más >>
             </a>
-                            
+                           
         </article>
             <!--<p><h2><a href='{% url "blog:detalle_post" pk=post.pk %}'>{{ post.titulo }}</a></p>
             <p>{{ post.texto|linebreaksbr|truncatechars:200 }}</p>-->
-                    
+            
             {% endfor %}
+            
+            
     </main>
-
-
+    
+    
 </body>
 {% endblock %}
