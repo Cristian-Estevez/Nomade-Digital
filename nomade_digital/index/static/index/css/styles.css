@@ -356,6 +356,16 @@
             padding-inline-start: 25px;
         }
 
+        @media (min-width: 996px) {
+            .servicio-inactivo {
+                display: none;
+            }
+
+            .servicio-activo{
+                display: block;
+            }
+            
+        }
         
         @media (min-width: 1100px) {
             .contenedor-servicios {
@@ -403,29 +413,58 @@
             text-align: center;
             font-weight: 700;
         }
+
+        .boton-publicar-centrado{
+            text-align: right;
+            margin-top: 5rem;
+        }
+
+        .boton-publicar-centrado a{
+            flex-basis: 30%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 996px){
+            .boton-publicar-centrado{
+                display: flex;
+                width: 50%;
+            }
+        }
         /* ULTIMOS POSTS--------- */
         .ultimos-posts{
-            display: flex;
-            justify-content: space-between;
+            
             margin-top: 3rem;
-            width: 70%;
-            margin: 3rem auto;
+            width: 90%;
+            margin: 5rem auto;
         }
 
+        
         .ultimo-post{
-            flex: 0 0 calc(30% - 1rem);
+            margin: 3rem auto;
             border: 5px solid orange;
-            border-radius: 10px;
+            border-radius: 10px;}
+
+        @media (min-width: 996px) {
+            .ultimos-posts{
+                display: flex;
+                justify-content: space-between;
+                
+            }
+
+            .ultimo-post{
+                flex: 0 0 calc(30% - 1rem);
+               
+            }
+
+            .ultimo-post:hover{
+                transition: 1s;
+                -webkit-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
+                -moz-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
+                box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
+            }
+    
         }
-
-        .ultimo-post:hover{
-            transition: 1s;
-            -webkit-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
-            -moz-box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
-            box-shadow: -3px 4px 15px 5px rgba(189,61,19,1);
-        }
-
-
 /* BLOG--------- */
         
         .blog {
@@ -536,7 +575,7 @@
 
         .contenedor-entradas {
             width: 90%;
-            margin: 4rem auto;
+            margin: 8rem auto;
             
         }
         
@@ -596,7 +635,7 @@
                 justify-content: space-evenly;
                 flex-wrap: wrap;
                 max-width: 1200px;
-                margin-top: 3rem;
+                
             }
             
             .contenedor-entrada{
@@ -607,6 +646,17 @@
                 max-width: 100%;
                 margin-top: 0;
             }
+        }
+
+        .publicado{
+            text-align: right;
+        }
+
+        .arreglo-width{
+            max-width: 500px;
+            display: flex;
+            margin: 5rem auto;
+            
         }
 
 
@@ -816,8 +866,7 @@ DETALLE POST------- */
         }
 
         .contenedor-jodido{
-            display: flex;
-            flex-wrap: wrap;
+            width: 70%;
             order: 1;
             margin: 0 auto;
         }
@@ -859,7 +908,7 @@ DETALLE POST------- */
 LISTA BORRADORES POST------- */
         .contenedor-lista-borrador{
             text-align: center;
-            margin: 3rem 0;
+            margin: 3rem auto;
         }
 
         .contenedor-lista-borrador h2{
@@ -870,10 +919,7 @@ LISTA BORRADORES POST------- */
 /* PAGINAS INTERNAS USUARIO----------
 ------RECURSOS------- */
     
-    .contenedor-detalle-recurso{
-        display: flex;
-        justify-content: space-between;
-    }
+    
 
     .contenedor-recurso{
         flex: 0 1 calc(45% - 2rem);
@@ -898,11 +944,20 @@ LISTA BORRADORES POST------- */
     .contenedor-interno{
 
         text-align: center;
-        max-width: 60%;
-        margin-top: 5rem;
-        height: 30vh;
+        
     }
 
+    @media (min-width: 996px){
+        .contenedor-interno{
+            max-width: 60%;
+            margin-top: 5rem;
+            height: 30vh;
+        }
+        .contenedor-detalle-recurso{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
     .contenedor-interno h2{
         font-size: 4rem;
         margin-bottom: 2rem;
@@ -921,6 +976,7 @@ LISTA BORRADORES POST------- */
 }
 
     .muchos-botones{
+        margin-top: 5rem;
         max-width: 996px;
         display: flex;
         justify-content: space-around;
