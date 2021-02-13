@@ -64,11 +64,9 @@
 
                         <nav class="contenedor-barra contenedor-barra-inactivo " id="stickyMenu">
                             <ul >
-                                <li><a href="sobremi.html">Sobre mí</a></li>
                                 <li><a href="#servicios">Servicios</a></li>
                                 <li><a href="{% url 'recursos:recursos'%}">Recursos</a></li>
                                 <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  <!--cambié codigo aca-->
-                                <li><a href="cursos.html">Cursos</a></li>
                                 <li><a href="#contacto">Contacto</a></li>
                             </ul>
 
@@ -108,8 +106,8 @@
             <h2> Servicios</h2>
             <div class="contenedor-servicios">
                 <div class="servicio">
-                    <h3>Community <br> Manager</h3>
-                    <ul>
+                    <h3 id="servicio">Community <br> Manager</h3>
+                    <ul class="servicio-inactivo">
                         <li>CREACIÓN DE ESTRATEGIAS</li>
                         <li>PUBLICIDAD PAGA (ADS)</li>
                         <li>CALENDARIO DE CONTENIDOS</li>
@@ -118,8 +116,8 @@
                     </ul>
                 </div>
                 <div class="servicio">
-                    <h3>Identidad <br> Visual</h3>
-                    <ul>
+                    <h3 id="servicio">Identidad <br> Visual</h3>
+                    <ul class="servicio-inactivo">
                         <li>LOGO</li>
                         <li>IDENTIDAD VISUAL</li>
                         <li>PLANTILLAS PARA POSTEOS</li>
@@ -127,8 +125,8 @@
                     </ul>
                 </div>
                 <div class="servicio">
-                    <h3>Asesorias <br> Personalizadas</h3>
-                    <ul>
+                    <h3 id="servicio">Asesorias <br> Personalizadas</h3>
+                    <ul class="servicio-inactivo">
                         <li>REUNIONES VIRTUALES</li>
                         <li>SEGUIMIENTO</li>
                         <li>CONSULTAS PUNTUALES</li>
@@ -136,9 +134,9 @@
                     </ul>
                 </div>
                 <div class="servicio">
-                    <h3>Otros <br> servicios
+                    <h3 id="servicio">Otros <br> servicios
                     </h3>
-                    <ul>
+                    <ul class="servicio-inactivo">
                         <li>FILTROS DE INSTAGRAM</li>
                         <li>STICKERS / GIFS</li>
                         <li>TARJETAS PERSONALES</li>
@@ -273,6 +271,20 @@
     
 
     <script>
+        //APERTURA SERVICIOS CON CLICK
+    //     const servicio = document.querySelectorAll('.contenedor-servicios:nth-child(2)');
+    //     const abrirServicio = document.querySelectorAll('.servicio ul')
+        
+    // abrirElServicio.addEventListener('click', () => {
+    //         console.log('funciona')
+    //             abrirServicio.classList.remove('servicio-inactivo')
+    
+    //     })
+
+        
+        
+            
+        
 
         const barraAbrir = document.querySelector('.barra span')
 const barraCerrar = document.querySelector('#cerrar') 
@@ -328,7 +340,6 @@ function addEventListeners() {
             
     })
     
-
     
 }
         

@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<div class="contenedor contenedor-lista-borrador">
+<div class="contenedor contenedor-botones-recursos">
     <h2><strong>Lista de borradores Recursos </strong></h2>
 
-    <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-lista-post">Agregar nuevo recurso</a>
-    <a href="{% url 'recursos:recursos' %}" class="boton boton-lista-post" >Volver a Recursos</a>
+    <a href="{% url 'recursos:nuevo_recurso' %}" id="Nuevo_post" class="boton boton-negro">Agregar nuevo recurso</a>
+    <a href="{% url 'recursos:recursos' %}" class="boton boton-negro" >Volver a Recursos</a>
 </div>
 
-<main class="contenedor-blog-interno">
+<div class="contenedor-entradas">
 
     
     {% for recurso in recursos %}
-        <div class="contenido-blog">
+        <div class="contenedor-entrada">
 
             {% if recurso.imagen.url is not None %}
                 <img src='{{ recurso.imagen.url }}'>
@@ -32,7 +32,7 @@
         </div>
     
     {% endfor %}
-</main>
+    </div>
 
 
 {% endblock %}

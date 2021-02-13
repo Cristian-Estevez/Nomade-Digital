@@ -4,32 +4,35 @@
 
     <div class="contenedor contenedor-detalle-article">
             <div class="contenedor-jodido">
+                <div class="publicado">
     {% if post.publicado %}
 
     
         <i>Publicado: {{ post.publicado }}</i>
     {% endif %}
-
+                </div>
+                <div class="contenedor-botones-recursos arreglo-width">
     {% if not post.publicado %}      
         
         {% if user.is_authenticated %}
 
-        <a class="boton boton-lista-post" href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a>
+        <a class="boton boton-negro" href="{% url 'blog:publicar_post' pk=post.pk %}">Publicar</a>
         
         {% endif %}
 
     {% endif %}
     
-        <a class="boton boton-lista-post" href="{% url 'blog:lista_posts' %}">Volver al Blog</a>
+        <a class="boton boton-negro" href="{% url 'blog:lista_posts' %}">Volver al Blog</a>
 
     {% if user.is_authenticated %}
 
-        <a href="{% url 'blog:editar_post' pk=post.pk %}" class="boton boton-lista-post">Editar</a>
-        <a href="{% url 'blog:borrar_post' pk=post.pk %}" class="boton boton-lista-post">Borrar</a>
+        <a href="{% url 'blog:editar_post' pk=post.pk %}" class="boton boton-negro">Editar</a>
+        <a href="{% url 'blog:borrar_post' pk=post.pk %}" class="boton boton-negro">Borrar</a>
         
         
 
     {% endif %}
+            </div>
 </div>
 
         <div class=" contenedor-article">
