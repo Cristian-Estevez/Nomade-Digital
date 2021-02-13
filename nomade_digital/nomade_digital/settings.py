@@ -142,6 +142,6 @@ EMAIL_USE_TLS = True
 
 CKEDITOR_CONFIGS = {
     'default': {     
-        'width': "100%",
+        'width': "auto",
     },
 }
