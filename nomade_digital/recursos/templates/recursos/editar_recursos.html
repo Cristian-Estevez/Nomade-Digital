@@ -18,12 +18,12 @@
             <p>Archivo: {{ form.archivo }}</p>
             
           
-            <button type="submit" value="Guardar" class="boton boton-lista-post">Guardar</button>
+            <button type="submit" value="Guardar" class="boton boton-negro">Guardar</button>
             
-            <a href="{% url 'recursos:lista_borrador_recursos' %}" class="boton boton-lista-post">Cancelar</a>
+            <a href="{% url 'recursos:lista_borrador_recursos' %}" class="boton boton-negro">Cancelar</a>
             
             {% if recurso %}
-            <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-lista-post">Eliminar definitivamente</a>
+            <a href="{% url 'recursos:borrar_recurso' pk=recurso.pk %}" class="boton boton-negro">Eliminar definitivamente</a>
             {% endif %}
         </form>
         
