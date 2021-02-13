@@ -105,8 +105,8 @@
         <div class="contenedor" id="servicios">
             <h2> Servicios</h2>
             <div class="contenedor-servicios">
-                <div class="servicio">
-                    <h3 id="servicio">Community <br> Manager</h3>
+                <div class="servicio servicio-uno">
+                    <h3 id="primerServicio">Community <br> Manager</h3>
                     <ul class="servicio-inactivo">
                         <li>CREACIÓN DE ESTRATEGIAS</li>
                         <li>PUBLICIDAD PAGA (ADS)</li>
@@ -115,8 +115,8 @@
                         <li>REPORTES</li>
                     </ul>
                 </div>
-                <div class="servicio">
-                    <h3 id="servicio">Identidad <br> Visual</h3>
+                <div class="servicio servicio-dos">
+                    <h3 id="segundoServicio">Identidad <br> Visual</h3>
                     <ul class="servicio-inactivo">
                         <li>LOGO</li>
                         <li>IDENTIDAD VISUAL</li>
@@ -124,8 +124,8 @@
                         <li>OPTIMIZACIÓN DE INSTAGRAM</li>
                     </ul>
                 </div>
-                <div class="servicio">
-                    <h3 id="servicio">Asesorias <br> Personalizadas</h3>
+                <div class="servicio servicio-tres">
+                    <h3 id="tercerServicio">Asesorias <br> Personalizadas</h3>
                     <ul class="servicio-inactivo">
                         <li>REUNIONES VIRTUALES</li>
                         <li>SEGUIMIENTO</li>
@@ -133,8 +133,8 @@
                         <li>ANALISIS DE REDES SOCIALES</li>
                     </ul>
                 </div>
-                <div class="servicio">
-                    <h3 id="servicio">Otros <br> servicios
+                <div class="servicio servicio-cuatro">
+                    <h3 id="cuartoServicio">Otros <br> servicios
                     </h3>
                     <ul class="servicio-inactivo">
                         <li>FILTROS DE INSTAGRAM</li>
@@ -268,124 +268,7 @@
     <script src="{% static 'index/js/carrusel.js' %}"></script> -->
     
 
-    <script>
-        //APERTURA SERVICIOS CON CLICK
-    //     const servicio = document.querySelectorAll('.contenedor-servicios:nth-child(2)');
-    //     const abrirServicio = document.querySelectorAll('.servicio ul')
-        
-    // abrirElServicio.addEventListener('click', () => {
-    //         console.log('funciona')
-    //             abrirServicio.classList.remove('servicio-inactivo')
-    
-    //     })
-
-        
-        
-            
-        
-
-        const barraAbrir = document.querySelector('.barra span')
-const barraCerrar = document.querySelector('#cerrar') 
-const barra = document.querySelector('.contenedorBarraInactivo')
-const nav = document.querySelector('nav')
-
-//MENU HAMBURGUESA FIJO
-        
-        //VER ELIMINAR PREVENT DEFAULT CON EL LINK RESPONSIVE
-        
-        //menu fixed responsive
-        window.onscroll = function() {
-                let ubicacion = window.pageYOffset;
-                if ( ubicacion <= 200) {
-                    //   console.log('apagado el boton')
-                      activo.classList.remove('activo')
-                      barraAbrir.classList.remove('activoResponsive')
-                    // activo.classList.add('inactivo')
-                    
-                } else {
-                    //   console.log('prendido el boton')
-                    // insertarMenuBtn();
-                    
-                    barraAbrir.classList.add('activoResponsive')
-                     nav.classList.add('activoResponsive')
-                     activo.classList.add('activo')
-
-                     
-                    }
-                    
-            }
-        //menu fijo pantalla grande
-        const activo = document.querySelector('#stickyMenu')
-
-addEventListeners()
-function addEventListeners() {
-    
-    
-    //cerrar menu responsive
-    barraCerrar.addEventListener('click', (e) => {
-        e.preventDefault()
-        nav.classList.remove('activoResponsive')
-        nav.classList.remove('contenedor-barra-activo')
-        nav.classList.add('contenedor-barra-inactivo')
-    })
-    
-    //abrir menu responsive
-    barraAbrir.addEventListener('click', (e) => {
-        e.preventDefault()
-            nav.classList.add('contenedor-barra-activo')
-            nav.classList.remove('contenedor-barra-inactivo')
-            
-            
-    })
-    
-    
-}
-        
-        
-            // window.onscroll = function() {
-            //     let ubicacion = window.pageYOffset;
-            //     if ( ubicacion <= 100) {
-            //           console.log('apagado el boton')
-            //          activo.classList.remove('activo')
-            //         // activo.classList.add('inactivo')
-                    
-            //     } else {
-            //           console.log('prendido el boton')
-            //         // insertarMenuBtn();
-            //          activo.classList.add('activo')
-            //     }
-            // }
-
-            //menu responsive abrir/cerrar
-
-
-
-    
-    
-
-
-            
-            // activo.addEventListener('click', () => {
-            //     const menuApertura = document.querySelector('div')
-            //     let ubicacion = window.pageYOffset;
-            //     if(menuApertura.classList.contains('despliegueActivo')) {
-            //         console.log('se desactivo el menu')
-            //         menuApertura.classList.add('despliegueMenu')
-            //         menuApertura.classList.remove('despliegueActivo')
-            //     } 
-                
-            //     else if (menuApertura.classList.contains('despliegueMenu') || ubicacion <= 500){
-            //         console.log('se activo el menu')
-            //         menuApertura.classList.add('despliegueActivo')
-            //         menuApertura.classList.remove('despliegueMenu')
-            //     }
-            // })
-            
-            
-
-        
-
-    </script>
+    <script src="{% static 'index/js/animaciones.js' %}"></script>
 </body>
 
 </html>
