@@ -68,12 +68,14 @@
                     <ul >
                         <li><a href="#">Servicios</a></li>
                         <li><a href="{% url 'recursos:recursos'%}">Recursos</a></li>
-                        <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  <!--cambié codigo aca-->
+                        <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
-
-                    <input type="search" placeholder="  ¿Que buscás?" class="buscador">
                     
+                    <form action="{% url 'index:busqueda' %}" method="GET">
+                        {% csrf_token %}
+                        <input type="text" placeholder="  ¿Que buscás?" class="buscador" name="q">
+                    </form>
 
                     <span id="cerrar" class="cerrar">
                         <i class="fas fa-times"></i>
@@ -89,11 +91,6 @@
 </div>
 
 </header>
-
-    
-
-    
-    
 
     {% block content %}
 

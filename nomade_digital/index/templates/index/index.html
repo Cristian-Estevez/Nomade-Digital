@@ -69,8 +69,13 @@
                                 <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  <!--cambié codigo aca-->
                                 <li><a href="#contacto">Contacto</a></li>
                             </ul>
-
-                            <input type="search" placeholder="  ¿Que buscás?" class="buscador">
+                            
+                            <!-- aca agregar el buscadorcon form -->
+                            <form action="{% url 'index:busqueda' %}" method="GET">
+                                {% csrf_token %}
+                                <input type="text" placeholder="  ¿Que buscás?" class="buscador" name="q">
+                            </form>
+                            
                             
 
                             <span id="cerrar" class="cerrar">

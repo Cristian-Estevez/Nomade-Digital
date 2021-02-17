@@ -1,0 +1,47 @@
+{% extends "blog/layout.html" %}
+
+{% block content %}
+<h1>Resultados de tu búsqueda</h1>
+
+<h2>Lista de Posts</h2>
+<section class="contenedor">
+        
+    <h2 style="text-align: center;">Echale un vistazo a mis ultimos posts</h2>
+    
+    <div class="ultimos-posts">
+
+        {% for post in post_list %}
+            <div class="ultimo-post">
+                {% if post.imagen %}
+                <a href="{% url 'blog:detalle_post' pk=post.pk %}"><img src="{{ post.imagen.url }}" alt=""></a>
+                {% endif %}
+                <h3>{{post.titulo}}</h3>
+            </div>
+       
+        {% endfor %}
+    </div>
+
+</section>
+
+<h2>Lista de Recursos</h2>
+<section class="contenedor">
+        
+    <h2 style="text-align: center;">Echale un vistazo a mis ultimos posts</h2>
+    
+    <div class="ultimos-posts">
+
+        {% for recurso in recurso_list %}
+            <div class="ultimo-post">
+                {% if recurso.imagen %}
+                <a href="{% url 'recursos:detalle_recursos' pk=recurso.pk %}"><img src="{{ recurso.imagen.url }}" alt=""></a>
+                {% endif %}
+                <h3>{{recurso.titulo}}</h3>
+            </div>
+       
+        {% endfor %}
+    </div>
+
+</section>
+
+
+{% endblock %}

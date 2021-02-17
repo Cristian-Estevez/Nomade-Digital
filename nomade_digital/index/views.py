@@ -4,6 +4,8 @@ from .forms import ConsultaForm
 from django.core.mail import send_mail
 from django.utils import timezone
 from .models import Consulta
+from blog.models import Post
+from recursos.models import Recurso
 
 
 # Create your views here.
@@ -48,4 +50,11 @@ def index(request):
     
     return render(request, 'index/index.html', context)
 
-#falta enviar el form a la vista y configurar la cuenta de mail para que se envien
+def busqueda(request):
+
+    query = request.GET.get('q')
+    recurso_list = Recurso.objects.filter(titulo__icontains=query).exclude(publicado=None).order_by("-publicado")
+    post_list = Post.objects.filter(titulo__icontains=query).exclude(publicado=None).order_by("-publicado")
+    context = {"post_list":post_list, "recurso_list":recurso_list}
+
+    return render(request, "index/busqueda.html", context)
