@@ -1,5 +1,6 @@
 from .forms import ConsultaForm
 from django.core.mail import send_mail
+from .models import Consulta
 
 
 def envia_mail(request):
@@ -8,7 +9,12 @@ def envia_mail(request):
     if form.is_valid:
             print(form)
             mensaje = form.cleaned_data.get("nombre")
-            form.save()
+
+            email_consultante = form.cleaned_data.get("email")
+            repetido = Consulta.objects.filter(email=email_consultante)
+
+            if not repetido:
+                form.save()
             
 
             send_mail(
