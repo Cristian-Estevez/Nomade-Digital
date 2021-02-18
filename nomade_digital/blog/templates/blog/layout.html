@@ -66,10 +66,10 @@
 
                 <nav class="contenedor-barra contenedor-barra-inactivo " id="stickyMenu">
                     <ul >
-                        <li><a href="#">Servicios</a></li>
+                        <li><a href="{% url 'index:servicios' %}">Servicios</a></li>
                         <li><a href="{% url 'recursos:recursos'%}">Recursos</a></li>
                         <li><a href="{% url 'blog:lista_posts'%}">Blog</a></li>  
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="{% url 'index:contacto' %}">Contacto</a></li>
                     </ul>
                     
                     <form action="{% url 'index:busqueda' %}" method="GET">

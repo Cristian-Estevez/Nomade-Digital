@@ -1,0 +1,48 @@
+
+
+    {% if mensaje != None %}
+    <!-- ESTE TEXTO SE RENDERIZA DESPUES DE HABER ENVIADO LA CONSULTA. FALTA DARLE FORMATO -->
+    <div>
+
+        <!-- poner capitalize en css 
+        
+        ACA ANDA ALGO MAL, NO APARECE EL NOMBRE EN LA PÁGINA, HAY QUE DECIDIR QUE TEXTO SE VAA RENDERIZAR Y DARLE FORMATO
+        
+        -->
+        
+        <h1 class="mensaje-aparece">{{ mensaje }} </h1>
+        <p>Responderé a la brevedad.</p>
+        <p>No olvides revisar tu casilla de Spam.</p>
+        <br><br> 
+
+
+    </div>
+
+
+    {% else %}
+    <section class="formulario" id="contacto">
+        <div class="contenedor">
+
+            
+            <form action="" class="contenedor-formulario formato-comentarios" method="POST">
+                <legend>Contactá conmigo</legend>
+                {% csrf_token %}
+                <div class="contenedor-comentarios">
+                    <div class="datos-comentario">
+                        <p>{{ form.nombre }}</p> 
+                        <p>{{ form.email }}</p>
+                    </div>
+
+                <div class="datos-comentario">
+                    <p>{{ form.mensaje }}</p>
+                </div>
+            </div>
+
+                <div class="contenedor-boton-submit">
+                    <input type="submit" class="boton">
+                </div>
+            </form>
+        </div>
+
+    </section>
+    {% endif %}
