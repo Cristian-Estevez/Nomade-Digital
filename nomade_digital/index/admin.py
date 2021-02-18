@@ -6,6 +6,6 @@ from .models import Consulta
 
 class ConsultaAdmin(admin.ModelAdmin):
     list_filter = ('email',)
-    list_display = ('email', 'nombre', 'mensaje')
+    list_display = ('email', 'nombre',)
 
 admin.site.register(Consulta, ConsultaAdmin)
