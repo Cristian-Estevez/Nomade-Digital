@@ -31,3 +31,6 @@ class EnvioRecurso(models.Model):
     email = models.EmailField()
     fecha = models.DateTimeField(default=timezone.now)
     recurso_enviado = models.ForeignKey(Recurso, on_delete=models.CASCADE, related_name='enviados', null=True, blank=True)
+
+    def __str__(self):
+        return self.email 

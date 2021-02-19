@@ -9,5 +9,6 @@ class RescursoAdmin(admin.ModelAdmin):
 
 @admin.register(EnvioRecurso)
 class EnvioRecursoAdmin(admin.ModelAdmin):
+    list_display = ["email", "nombre", "recurso_enviado", "fecha"]
     class Meta:
         model = EnvioRecurso
