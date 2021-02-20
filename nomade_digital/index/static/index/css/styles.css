@@ -299,8 +299,9 @@
         }
         /* SERVICIOS***--------- */
         
+        /* ACA MODIFIQUE YO, CRISTIAN el height*/
         .servicios{
-            height: 400px;
+            height: auto;
         }
         .servicios h2 {
             margin-top: 3rem;
