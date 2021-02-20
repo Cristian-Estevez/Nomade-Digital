@@ -178,9 +178,8 @@
                 
                 margin-top: 3rem;
             }
-            .contenedor-barra input{
-                display: inline!important;
-                margin-left: 3rem;
+            .contenedor-barra form input{
+                margin-right: 3rem;
                 margin-top: .4rem;
                 width: 100%;
 
@@ -300,9 +299,11 @@
         }
         /* SERVICIOS***--------- */
         
-        
+        .servicios{
+            height: 400px;
+        }
         .servicios h2 {
-            
+            margin-top: 3rem;
             padding-top: 2rem;
             font-size: 4rem;
             margin-bottom: 2rem;
@@ -330,7 +331,7 @@
             line-height: 2.8rem;
             font-weight: 700;
         }
-
+ 
         .servicio ul{
             background-color: white;
             margin-top: -1rem;
@@ -354,7 +355,7 @@
 
         ul{
             padding-inline-start: 25px;
-        }
+        } 
 
         
             .servicio-inactivo {
@@ -362,33 +363,37 @@
             }
 
             .servicio-activo{
-              
-               
+                
+                
                 animation-duration: 1s;
                 animation-name: prueba;
 
             }
 
-            .servicio-activo li{
+             .servicio-activo ul li{
                 animation-duration: 1s;
                 animation-name: prueba-dos;
-            }
+            } 
    @keyframes prueba{
        from{
-           height: 0px;
+           height: 0;
+           
        }
 
        to{
-           height: auto;
+        height: auto;
+        
        }
    }
 
    @keyframes prueba-dos{
        from{
            height: 0;
+           
        }
        to{
-           height: 36px;
+           height: auto;
+           
        }
    }
         
