@@ -75,7 +75,7 @@ def contacto(request):
         'mensaje': mensaje,
     }
 
-    return render(request, "index/servicios.html", context)
+    return render(request, "index/contacto.html", context)
 
 def busqueda(request):
 
