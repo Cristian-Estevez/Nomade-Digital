@@ -299,9 +299,7 @@
         }
         /* SERVICIOS***--------- */
         
-        .servicios{
-            height: 400px;
-        }
+        
         .servicios h2 {
             margin-top: 3rem;
             padding-top: 2rem;
@@ -332,12 +330,13 @@
             font-weight: 700;
         }
  
-        .servicio ul{
+        /* .servicio ul{
+            
             background-color: white;
             margin-top: -1rem;
             border-radius: 0 0 10px 10px;
         }
-        
+         */
         .servicio ul li{
             font-size: 1.2rem;
             padding-top: .8rem;
@@ -357,57 +356,93 @@
             padding-inline-start: 25px;
         } 
 
-        
+        /* ANIMACION EN SERVICIOS AL CLICK */
+
             .servicio-inactivo {
                 display: none;
             }
 
             .servicio-activo{
-                
-                
                 animation-duration: 1s;
-                animation-name: prueba;
-
+                animation-name: prueba;  
+                background-color: white;
+                border-radius: 0 0 10px 10px;
+                margin-top: -1rem;
+                height: 75%;
+            }
+            .servicio-activo li{
+                display: none;
+            }
+             .servicio-activo li{
+                 display: block; 
+            } 
+        @keyframes prueba{
+            0% {
+                background-color: white;
+                margin-top: -1rem;
+                border-radius: 0 0 10px 10px;
+                height: 0%;
+                
             }
 
-             .servicio-activo ul li{
-                animation-duration: 1s;
-                animation-name: prueba-dos;
-            } 
-   @keyframes prueba{
-       from{
-           height: 0;
-           
-       }
+            100% {
+                background-color: white;
+                height: 70%;
+            }
+        }
 
-       to{
-        height: auto;
+            .contenedor-servicios {
+                            display: none;
+                            
+                }
+                .servicio-animacion{
+                    display: block;
+                    animation-duration: 1s;
+                    animation-name: animacion-servicio;
+                }
+    
+                @keyframes animacion-servicio{
+                    0%{
+                        margin: 100px auto;
+                    }
         
-       }
-   }
-
-   @keyframes prueba-dos{
-       from{
-           height: 0;
-           
-       }
-       to{
-           height: auto;
-           
-       }
-   }
+                    100%{
+                        margin: 1rem auto;
+                    }
+                }
         
         @media (min-width: 1100px) {
+            .servicios{
+               margin-bottom: 2rem; 
+            }
             .contenedor-servicios {
-                width: 80%;
-                max-width: 1000px;
-                display: flex;
-                justify-content: space-between;
-                margin: 0 auto;
+                display: none;
+                
             }
             .servicio {
                 flex: 0 1 calc(24% - 1rem);
                 line-height: 2.2rem;
+            }
+
+            .servicio-animacion{
+                width: 80%;
+                height: 330px;
+                max-width: 1000px;
+                display: flex;
+                justify-content: space-between;
+                margin: 2rem auto;
+                animation-duration: 1s;
+                animation-name: animacion-servicio;
+            }
+
+            @keyframes animacion-servicio{
+                0%{
+                    margin: 100px auto;
+                }
+    
+                100%{
+                    margin: 1rem auto;
+                }
             }
         }
         /* RECURSOS***-------- */
@@ -427,12 +462,35 @@
         }
         
         .recurso {
+            
+            display: none;
+            
+        }
+
+        .recurso-activo{
+            display: block;
             background-color: white;
             font-size: 2rem;
             text-transform: uppercase;
             border: .2rem double black;
             margin-bottom: 1.5rem;
+            animation-duration: 1s;
+            animation-name: animacion-recurso;
+            margin: 1rem auto;
+            
         }
+
+        @keyframes animacion-recurso{
+            0%{
+                margin: 100px auto;
+            }
+
+            100%{
+                margin: 1rem auto;
+            }
+        }
+
+
         
         .recurso:last-of-type {
             margin-bottom: 0;
@@ -1060,8 +1118,8 @@ LISTA BORRADORES POST------- */
     }
 
    
-    /* menu fijo pantalla grande */
- @media (max-width: 996px){
+    /* menu fijo pantalla chica */
+ 
     .activoResponsive{
         position: fixed!important;
         bottom: 20px;
@@ -1071,8 +1129,9 @@ LISTA BORRADORES POST------- */
         font-size: 3rem;
         border-radius: 5px;
     }
- }
-    
+ 
+    /*menu fijo pantalla grande */
+
     @media (min-width: 996px){
         
         .activo{
