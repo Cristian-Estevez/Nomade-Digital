@@ -12,7 +12,7 @@ from .consulta import envia_mail #en consulta.py tengo la función de envío de 
 def index(request):
 
 
-    posts = Post.objects.all().order_by("-publicado")[:3]
+    posts = Post.objects.filter(publicado__lte=timezone.now()).order_by("-publicado")[:3]
     
     
     if request.method == 'POST':
