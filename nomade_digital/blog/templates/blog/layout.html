@@ -100,69 +100,7 @@
         <i>Todos los derechos reservados</i>
     </footer>
 
-    <script>
-    //MENU HAMBURGUESA FIJO
-        
-    //VER ELIMINAR PREVENT DEFAULT CON EL LINK RESPONSIVE
-    
-    const barraAbrir = document.querySelector('.barra span')
-const barraCerrar = document.querySelector('#cerrar') 
-const barra = document.querySelector('.contenedorBarraInactivo')
-const nav = document.querySelector('nav')
-
-//MENU HAMBURGUESA FIJO
-        
-        //VER ELIMINAR PREVENT DEFAULT CON EL LINK RESPONSIVE
-        
-        //menu fixed responsive
-        window.onscroll = function() {
-                let ubicacion = window.pageYOffset;
-                if ( ubicacion <= 200) {
-                    //   console.log('apagado el boton')
-                      activo.classList.remove('activo')
-                      barraAbrir.classList.remove('activoResponsive')
-                    // activo.classList.add('inactivo')
-                    
-                } else {
-                    //   console.log('prendido el boton')
-                    // insertarMenuBtn();
-                    
-                    barraAbrir.classList.add('activoResponsive')
-                     nav.classList.add('activoResponsive')
-                     activo.classList.add('activo')
-
-                     
-                    }
-                    
-            }
-        //menu fijo pantalla grande
-        const activo = document.querySelector('#stickyMenu')
-
-addEventListeners()
-function addEventListeners() {
-    
-    
-    //cerrar menu responsive
-    barraCerrar.addEventListener('click', (e) => {
-        e.preventDefault()
-        nav.classList.remove('activoResponsive')
-        nav.classList.remove('contenedor-barra-activo')
-        nav.classList.add('contenedor-barra-inactivo')
-    })
-    
-    //abrir menu responsive
-    barraAbrir.addEventListener('click', (e) => {
-        e.preventDefault()
-            nav.classList.add('contenedor-barra-activo')
-            nav.classList.remove('contenedor-barra-inactivo')
-            
-            
-    })
-    
-    
-}
-</script>
-
+    <script src="{% static 'index/js/animaciones.js' %}"></script>
 
 
 </body>
